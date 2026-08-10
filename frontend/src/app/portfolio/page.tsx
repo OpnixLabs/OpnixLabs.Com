@@ -1,59 +1,94 @@
 import React from 'react';
 import Link from 'next/link';
-import { Sparkles } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 
 export default function PortfolioPage() {
   const projects = [
     {
-      title: 'NeonPulse Analytics Platform',
-      category: 'Full-Stack & Cloud Database',
-      tech: ['Next.js', 'Go', 'Neon Postgres', 'Drizzle ORM'],
-      description: 'Real-time telemetry dashboard analyzing millions of event logs per second with sub-50ms latency.',
+      title: 'Enterprise Wealth Analytics Portal',
+      category: 'FinTech & Banking',
+      description: 'High-performance web dashboard engineered for institutional investors managing $2B+ in assets, handling real-time data streaming and multi-region failovers.',
+      image: '/images/project1.png',
+      tags: ['Next.js 14', 'TypeScript', 'FinTech', 'Real-Time Analytics'],
     },
     {
-      title: 'AutoBlog AI Engine',
-      category: 'GenAI & Scheduled Systems',
-      tech: ['Go', 'Gemini 2.5', 'robfig/cron', 'Tailwind CSS'],
-      description: 'Autonomous content generation pipeline continuously curating industry analysis and publishing formatted articles.',
+      title: 'Global Multi-Cloud Data Gateway',
+      category: 'Cloud Systems',
+      description: 'Resilient cloud infrastructure and microservices routing 50M+ daily API transactions across multi-cloud environments for global supply chains.',
+      image: '/images/project2.png',
+      tags: ['Cloud Infrastructure', 'Microservices', 'High-Availability', 'API Gateway'],
     },
     {
-      title: 'HyperDrive SaaS Portal',
-      category: 'Enterprise Web Application',
-      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Chi Router'],
-      description: 'Customer management workflow interface featuring live document collaboration and interactive WYSIWYG editing.',
+      title: 'Omnichannel Enterprise SaaS',
+      category: 'Software Architecture',
+      description: 'Custom SaaS platform providing automated inventory sync, customer analytics, and sub-100ms checkout workflows.',
+      image: '/image/hero.png',
+      tags: ['SaaS Platform', 'TypeScript', 'PostgreSQL', 'High Concurrency'],
     },
   ];
 
   return (
-    <div className="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-      <div className="text-center max-w-2xl mx-auto space-y-3">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Engineering <span className="gradient-text">Portfolio</span></h1>
-        <p className="text-slate-400 text-sm sm:text-base">A showcase of production systems and client innovations engineered by our team.</p>
+    <div className="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="text-center max-w-3xl mx-auto space-y-4">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
+          Client Portfolio
+        </span>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white">
+          Our Featured <span className="gradient-text">Case Studies</span>
+        </h1>
+        <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+          Explore how OpnixLabs delivers high-impact software products and cloud architectures for industry leaders.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, i) => (
-          <div key={i} className="glass-panel rounded-md p-6 glass-panel-hover border border-slate-800 flex flex-col justify-between space-y-5">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                {/* Pill shaped category badge */}
-                <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-medium">
+          <div
+            key={i}
+            className="glass-panel rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 space-y-5 flex flex-col justify-between group"
+          >
+            <div>
+              <div className="relative h-56 w-full overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/80 text-cyan-400 text-xs font-bold border border-cyan-500/30">
                   {project.category}
-                </span>
-                <Sparkles className="w-4 h-4 text-cyan-400" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-white">{project.title}</h3>
-              <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">{project.description}</p>
+
+              <div className="p-6 space-y-3">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-500 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5 pt-2">
+                  {project.tags.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-[11px] font-medium border border-slate-200 dark:border-slate-800"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className="pt-3 border-t border-slate-800/80">
-              <div className="flex flex-wrap gap-1.5">
-                {project.tech.map((t, idx) => (
-                  <span key={idx} className="px-2 py-0.5 rounded-md bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono">
-                    {t}
-                  </span>
-                ))}
-              </div>
+            <div className="px-6 pb-6 pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:text-cyan-500"
+              >
+                Inquire Similar Solution <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           </div>
         ))}
@@ -61,4 +96,3 @@ export default function PortfolioPage() {
     </div>
   );
 }
-
