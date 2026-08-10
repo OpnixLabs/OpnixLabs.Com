@@ -1,7 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { getPosts, Post } from '@/lib/api';
 import { Calendar, ArrowRight, BookOpen } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Software Insights & Technology Blog',
+  description:
+    'Read latest technical articles and industry analysis on enterprise web architecture, cloud systems, and modern software engineering from OpnixLabs.',
+};
 
 export const revalidate = 0; // Ensure Server Component always gets fresh posts
 

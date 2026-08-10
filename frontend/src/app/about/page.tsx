@@ -1,7 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Target, Users, ShieldCheck, ArrowRight, Sparkles, CheckCircle2, Award, Globe, Headphones } from 'lucide-react';
+import type { Metadata } from 'next';
+import { Target, Users, ShieldCheck, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'About Our IT Agency & Company Mission',
+  description:
+    'Learn about OpnixLabs: senior technical architects and software engineers delivering high-performance web applications, cloud systems, and 99.99% uptime guarantees.',
+};
 
 export default function AboutPage() {
   const values = [

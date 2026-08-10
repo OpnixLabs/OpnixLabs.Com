@@ -1,7 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import type { Metadata } from 'next';
+import { ArrowRight } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Client Case Studies & Software Engineering Portfolio',
+  description:
+    'Explore featured OpnixLabs client case studies in FinTech, multi-cloud data gateways, enterprise SaaS platforms, and digital transformation projects.',
+};
 
 export default function PortfolioPage() {
   const projects = [

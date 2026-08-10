@@ -1,6 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { Globe, Database, Layers, Lock, Zap, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'IT Services & Custom Software Engineering',
+  description:
+    'Explore OpnixLabs enterprise services: custom web application development, cloud infrastructure, enterprise APIs, cybersecurity, and digital transformation.',
+};
 
 export default function ServicesPage() {
   const services = [
