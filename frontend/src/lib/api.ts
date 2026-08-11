@@ -89,6 +89,8 @@ export interface CreateLeadPayload {
   name: string;
   email: string;
   message: string;
+  honeypot?: string;
+  turnstileToken?: string;
 }
 
 export interface Lead {

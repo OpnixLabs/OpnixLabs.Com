@@ -1,14 +1,15 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { getLeads, deleteLead, Lead } from '@/lib/api';
-import { Users, Trash2, Mail, Calendar, Search, RefreshCw, CheckCircle2, AlertCircle } from 'lucide-react';
+import { getLeads, deleteLead, updateLeadStatus, Lead } from '@/lib/api';
+import { Users, Trash2, Mail, Calendar, Search, RefreshCw, CheckCircle2, Tag } from 'lucide-react';
 
 export default function AdminLeadsPage() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [deletingId, setDeletingId] = useState<number | null>(null);
+  const [updatingId, setUpdatingId] = useState<number | null>(null);
   const [message, setMessage] = useState<string | null>(null);
 
   const fetchLeadsData = async () => {
@@ -26,6 +27,20 @@ export default function AdminLeadsPage() {
   useEffect(() => {
     fetchLeadsData();
   }, []);
+
+  const handleStatusChange = async (id: number, newStatus: string) => {
+    try {
+      setUpdatingId(id);
+      await updateLeadStatus(id, newStatus);
+      setLeads((prev) => prev.map((l) => (l.id === id ? { ...l, status: newStatus } : l)));
+      setMessage(`Lead status updated to '${newStatus}'.`);
+      setTimeout(() => setMessage(null), 2500);
+    } catch (err: any) {
+      alert(err.message || 'Failed to update lead status.');
+    } finally {
+      setUpdatingId(null);
+    }
+  };
 
   const handleDelete = async (id: number) => {
     if (!window.confirm('Are you sure you want to delete this lead inquiry?')) return;
@@ -134,9 +149,30 @@ export default function AdminLeadsPage() {
                         <Mail className="w-3 h-3" /> {lead.email}
                       </a>
                     </div>
-                    <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
-                      {lead.status}
-                    </span>
+                    
+                    {/* Dynamic Status Dropdown Selector */}
+                    <div className="flex items-center gap-1">
+                      <Tag className="w-3 h-3 text-slate-400" />
+                      <select
+                        value={lead.status || 'new'}
+                        disabled={updatingId === lead.id}
+                        onChange={(e) => handleStatusChange(lead.id, e.target.value)}
+                        className={`text-[11px] font-semibold px-2 py-1 rounded-md border bg-slate-900 focus:outline-none cursor-pointer ${
+                          lead.status === 'contacted'
+                            ? 'text-amber-400 border-amber-500/30'
+                            : lead.status === 'qualified'
+                            ? 'text-emerald-400 border-emerald-500/30'
+                            : lead.status === 'closed'
+                            ? 'text-slate-400 border-slate-700'
+                            : 'text-cyan-400 border-cyan-500/30'
+                        }`}
+                      >
+                        <option value="new">new</option>
+                        <option value="contacted">contacted</option>
+                        <option value="qualified">qualified</option>
+                        <option value="closed">closed</option>
+                      </select>
+                    </div>
                   </div>
 
                   <div className="p-3 rounded-md bg-slate-900/90 border border-slate-800 text-slate-300 text-xs leading-relaxed font-normal">

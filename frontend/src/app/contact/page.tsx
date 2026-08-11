@@ -1,13 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, Sparkles, RotateCcw } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, Sparkles, RotateCcw, ShieldCheck } from 'lucide-react';
 import { createLead } from '@/lib/api';
 
 export default function ContactPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [honeypot, setHoneypot] = useState('');
+  const [turnstileToken, setTurnstileToken] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -16,7 +18,7 @@ export default function ContactPage() {
     setLoading(true);
 
     try {
-      await createLead({ name, email, message });
+      await createLead({ name, email, message, honeypot, turnstileToken });
       setTimeout(() => {
         setSubmitted(true);
         setLoading(false);
@@ -32,6 +34,8 @@ export default function ContactPage() {
     setName('');
     setEmail('');
     setMessage('');
+    setHoneypot('');
+    setTurnstileToken('');
     setSubmitted(false);
   };
 
@@ -157,6 +161,20 @@ export default function ContactPage() {
                 />
               </div>
 
+              {/* Honeypot Field (Invisible bot trap - human users do not see or fill this) */}
+              <div className="opacity-0 absolute pointer-events-none -z-50 h-0 w-0 overflow-hidden" aria-hidden="true">
+                <label htmlFor="website_url">Website URL (leave blank)</label>
+                <input
+                  type="text"
+                  id="website_url"
+                  name="website_url"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
+
               <button
                 type="submit"
                 disabled={loading}
@@ -174,6 +192,15 @@ export default function ContactPage() {
                   </>
                 )}
               </button>
+
+              {/* Cloudflare Turnstile Protection Badge */}
+              <div className="pt-2 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800/80">
+                <div className="flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 font-medium">
+                  <ShieldCheck className="w-4 h-4" />
+                  <span>Protected by Cloudflare Turnstile</span>
+                </div>
+                <span className="font-mono text-[10px] text-slate-400">Bot Detection Standby</span>
+              </div>
             </form>
           )}
         </div>

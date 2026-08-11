@@ -156,3 +156,32 @@ export async function deleteLead(id: number): Promise<void> {
     console.warn('Backend API delete unavailable:', e);
   }
 }
+
+/**
+ * Update lead status by ID
+ */
+export async function updateLeadStatus(id: number, status: string): Promise<void> {
+  if (typeof window !== 'undefined') {
+    try {
+      const existing: Lead[] = JSON.parse(localStorage.getItem('opnixlabs_leads') || '[]');
+      const updated = existing.map((l) => (l.id === id ? { ...l, status } : l));
+      localStorage.setItem('opnixlabs_leads', JSON.stringify(updated));
+    } catch (e) {
+      console.warn('Could not update status in local leads:', e);
+    }
+  }
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/leads/${id}/status`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status }),
+    });
+
+    if (!res.ok) {
+      console.warn(`Backend lead status update failed: ${res.status}`);
+    }
+  } catch (e) {
+    console.warn('Backend API lead status update unavailable:', e);
+  }
+}

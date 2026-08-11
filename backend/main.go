@@ -69,6 +69,7 @@ func main() {
 		registerLeadRoutes := func(r chi.Router) {
 			r.Get("/", leadHandler.GetLeads)
 			r.Post("/", leadHandler.CreateLead)
+			r.Put("/{id}/status", leadHandler.UpdateLeadStatus)
 			r.Delete("/{id}", leadHandler.DeleteLead)
 		}
 		r.Route("/api/leads", registerLeadRoutes)
