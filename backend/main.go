@@ -45,11 +45,11 @@ func main() {
 
 	// Configure CORS for Next.js frontend
 	r.Use(cors.Handler(cors.Options{
-		AllowedOrigins:   []string{"http://localhost:3000", "http://localhost:3001", "*"},
+		AllowedOrigins:   []string{"*"},
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
 		ExposedHeaders:   []string{"Link"},
-		AllowCredentials: true,
+		AllowCredentials: false,
 		MaxAge:           300,
 	}))
 
@@ -58,20 +58,23 @@ func main() {
 		postHandler := handlers.NewPostHandler(database)
 		leadHandler := handlers.NewLeadHandler(database)
 
-		r.Route("/api/posts", func(r chi.Router) {
+		registerPostRoutes := func(r chi.Router) {
 			r.Get("/", postHandler.GetPosts)
 			r.Post("/", postHandler.CreatePost)
 			r.Get("/{slug}", postHandler.GetPostBySlug)
-		})
+		}
+		r.Route("/api/posts", registerPostRoutes)
+		r.Route("/posts", registerPostRoutes)
 
-		r.Route("/api/leads", func(r chi.Router) {
+		registerLeadRoutes := func(r chi.Router) {
 			r.Get("/", leadHandler.GetLeads)
 			r.Post("/", leadHandler.CreateLead)
 			r.Delete("/{id}", leadHandler.DeleteLead)
-		})
+		}
+		r.Route("/api/leads", registerLeadRoutes)
+		r.Route("/leads", registerLeadRoutes)
 
-		// Endpoint to manually trigger AI auto-blogging generation (useful for testing)
-		r.Post("/api/admin/trigger-cron", func(w http.ResponseWriter, r *http.Request) {
+		triggerCronHandler := func(w http.ResponseWriter, r *http.Request) {
 			if autoBlogger == nil {
 				http.Error(w, "Auto blogger is not configured", http.StatusBadRequest)
 				return
@@ -83,7 +86,9 @@ func main() {
 			}()
 			w.Header().Set("Content-Type", "application/json")
 			w.Write([]byte(`{"message": "Gemini auto-blogging process triggered in background"}`))
-		})
+		}
+		r.Post("/api/admin/trigger-cron", triggerCronHandler)
+		r.Post("/admin/trigger-cron", triggerCronHandler)
 	}
 
 	r.Get("/health", func(w http.ResponseWriter, r *http.Request) {
