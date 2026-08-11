@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { getPosts } from '@/lib/api';
 
+export const revalidate = 3600;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://opnixlabs.com';
 
@@ -21,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Fetch dynamic blog posts
   try {
-    const posts = await getPosts();
+    const posts = await getPosts({ next: { revalidate: 3600 } });
     const blogRoutes = posts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
       lastModified: new Date(post.created_at),

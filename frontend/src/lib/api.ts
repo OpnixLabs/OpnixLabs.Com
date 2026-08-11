@@ -16,10 +16,11 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/a
 /**
  * Fetch all posts from Go backend
  */
-export async function getPosts(): Promise<Post[]> {
+export async function getPosts(options?: RequestInit): Promise<Post[]> {
   try {
     const res = await fetch(`${API_BASE_URL}/posts`, {
-      cache: 'no-store', // Always fetch fresh posts
+      next: { revalidate: 60 },
+      ...options,
     });
 
     if (!res.ok) {
@@ -36,10 +37,11 @@ export async function getPosts(): Promise<Post[]> {
 /**
  * Fetch single post by slug from Go backend
  */
-export async function getPostBySlug(slug: string): Promise<Post | null> {
+export async function getPostBySlug(slug: string, options?: RequestInit): Promise<Post | null> {
   try {
     const res = await fetch(`${API_BASE_URL}/posts/${slug}`, {
-      cache: 'no-store',
+      next: { revalidate: 60 },
+      ...options,
     });
 
     if (res.status === 404) {
