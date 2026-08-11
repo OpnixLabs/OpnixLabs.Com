@@ -11,7 +11,12 @@ export interface CreatePostPayload {
   content_html: string;
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api';
+const getApiBaseUrl = () => {
+  const envUrl = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api').trim().replace(/\/+$/, '');
+  return envUrl.endsWith('/api') ? envUrl : `${envUrl}/api`;
+};
+
+const API_BASE_URL = getApiBaseUrl();
 
 /**
  * Fetch all posts from Go backend

@@ -11,12 +11,11 @@ import {
   Lock,
   Layers,
   CheckCircle2,
-  Users,
-  Award,
-  Clock,
   ChevronRight,
   Quote,
   Headphones,
+  Monitor,
+  Layout,
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -95,77 +94,81 @@ export default function HomePage() {
   return (
     <div className="relative space-y-24 pb-20">
       {/* HERO SECTION */}
-      <section className="relative pt-8 md:pt-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="relative pt-6 md:pt-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Hero Column */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 text-xs sm:text-sm font-semibold">
-              <Sparkles className="w-4 h-4 text-cyan-500 dark:text-cyan-400" />
-              <span>Premier IT Solutions & Digital Software Agency</span>
-            </div>
-
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-              Innovating <span className="gradient-text">Digital Experience</span> & Enterprise Software
+          <div className="lg:col-span-6 space-y-6 text-left">
+            <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+              We Build Digital{' '}
+              <span className="gradient-text font-extrabold">Solutions</span><br />
+              That Build Your Business
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed max-w-2xl">
-              Empowering global enterprises, fintech platforms, and scaling startups with custom software development, resilient cloud architecture, and high-conversion web applications.
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-lg">
+              Custom Web Applications | SaaS Platforms<br />
+              Modern Websites | Seamless Experiences
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+            <div className="pt-2">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto px-7 py-3.5 rounded-md bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm shadow-lg hover:shadow-cyan-500/25 transition-all flex items-center justify-center gap-2"
+                className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all transform hover:-translate-y-0.5"
               >
-                Schedule Technical Consultation
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/services"
-                className="w-full sm:w-auto px-7 py-3.5 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-white font-semibold text-sm hover:bg-slate-200 dark:hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
-              >
-                Explore All Services
+                <span>Let&apos;s Build Together</span>
+                <div className="w-5 h-5 rounded-full bg-slate-950/20 flex items-center justify-center">
+                  <ArrowRight className="w-3.5 h-3.5 text-slate-950" />
+                </div>
               </Link>
             </div>
 
-            <div className="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200 dark:border-slate-800/80">
-              <div className="space-y-1">
-                <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">99.99%</div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">Uptime Guarantee</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">150+</div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">Enterprise Clients</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">24/7</div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">Managed Support</div>
+            {/* Our Expertise Row */}
+            <div className="pt-6 space-y-3">
+              <h3 className="text-xs uppercase tracking-widest font-bold text-slate-500 dark:text-slate-400">
+                Our Expertise
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
+                  <div className="p-2 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform">
+                    <Monitor className="w-4 h-4" />
+                  </div>
+                  <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">Web Development</span>
+                </div>
+
+                <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
+                  <div className="p-2 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform">
+                    <Layers className="w-4 h-4" />
+                  </div>
+                  <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">SaaS Development</span>
+                </div>
+
+                <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
+                  <div className="p-2 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform">
+                    <Layout className="w-4 h-4" />
+                  </div>
+                  <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">UI/UX Design</span>
+                </div>
+
+                <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
+                  <div className="p-2 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                  <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">Performance & Security</span>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Right Hero Image Showcase */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl">
+          <div className="lg:col-span-6 relative">
+            <div className="relative rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl bg-slate-900/40">
               <Image
                 src="/images/hero.png"
-                alt="OpnixLabs IT Agency Engineering Team"
-                width={700}
+                alt="OpnixLabs Digital Solutions & Software Engineering"
+                width={750}
                 height={600}
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-              
-              {/* Floating Badge */}
-              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-md glass-panel border border-slate-700/80 text-white space-y-1">
-                <div className="flex items-center gap-2 text-cyan-400 text-xs font-bold uppercase tracking-wider">
-                  <ShieldCheck className="w-4 h-4" /> Trusted Software Engineers
-                </div>
-                <p className="text-xs text-slate-200">
-                  Delivering high-availability cloud architecture and custom enterprise web portals.
-                </p>
-              </div>
             </div>
           </div>
         </div>
