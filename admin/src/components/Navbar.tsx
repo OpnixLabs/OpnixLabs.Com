@@ -4,12 +4,14 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, FileText, PenSquare, Users, ExternalLink, Menu, X } from 'lucide-react';
+import { LayoutDashboard, FileText, PenSquare, Users, ExternalLink, Menu, X, LogOut } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import { useAdminAuth } from './AdminAuthGuard';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { logout } = useAdminAuth();
 
   const navLinks = [
     { name: 'Dashboard', href: '/', icon: <LayoutDashboard className="w-4 h-4" /> },
@@ -72,6 +74,14 @@ export default function Navbar() {
             >
               Main Site <ExternalLink className="w-3.5 h-3.5" />
             </a>
+            <button
+              type="button"
+              onClick={logout}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 hover:text-red-300 text-xs font-semibold transition-colors"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              Sign Out
+            </button>
           </div>
 
           {/* Mobile Menu Toggle */}

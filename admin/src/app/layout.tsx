@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
+import AdminAuthGuard from '@/components/AdminAuthGuard';
 
 export const metadata: Metadata = {
   title: 'OpnixLabs Admin Console',
@@ -23,8 +24,10 @@ export default function RootLayout({
         <link rel="icon" href="/favIcon.ico" sizes="any" />
       </head>
       <body className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased transition-colors">
-        <Navbar />
-        <main className="flex-grow">{children}</main>
+        <AdminAuthGuard>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+        </AdminAuthGuard>
       </body>
     </html>
   );
