@@ -114,11 +114,11 @@ export default function Footer() {
 
           {/* Contact Information */}
           <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Global Offices</h4>
+            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Location & Contact</h4>
             <div className="space-y-3 text-xs sm:text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span>Silicon Valley, CA • Washington DC • London UK</span>
+                <span>Uttar Pradesh, India</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-cyan-400 flex-shrink-0" />
@@ -126,7 +126,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                <span>+1 (800) 555-OPNIX</span>
+                <span>+91 88826-59469</span>
               </div>
             </div>
           </div>

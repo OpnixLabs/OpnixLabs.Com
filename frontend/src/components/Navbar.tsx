@@ -46,15 +46,15 @@ export default function Navbar() {
           <div className="flex items-center gap-6 text-slate-300">
             <div className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
               <MapPin className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Silicon Valley • Washington DC • London</span>
+              <span>Uttar Pradesh, India</span>
             </div>
             <a href="mailto:contact@opnixlabs.com" className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
               <Mail className="w-3.5 h-3.5 text-cyan-400" />
               <span>contact@opnixlabs.com</span>
             </a>
-            <a href="tel:+18005556764" className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
+            <a href="tel:+918882659469" className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
               <Phone className="w-3.5 h-3.5 text-cyan-400" />
-              <span>+1 (800) 555-OPNIX</span>
+              <span>+91 88826-59469</span>
             </a>
           </div>
 

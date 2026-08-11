@@ -80,6 +80,63 @@ export async function createPost(payload: CreatePostPayload): Promise<Post> {
   return await res.json();
 }
 
+export interface CreateLeadPayload {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export interface Lead {
+  id: number;
+  name: string;
+  email: string;
+  message: string;
+  status: string;
+  created_at: string;
+}
+
+/**
+ * Submit new contact lead to Go backend & save locally
+ */
+export async function createLead(payload: CreateLeadPayload): Promise<Lead> {
+  const newLead: Lead = {
+    id: Date.now(),
+    name: payload.name,
+    email: payload.email,
+    message: payload.message,
+    status: 'new',
+    created_at: new Date().toISOString(),
+  };
+
+  // Always store locally so admin on same origin/client sees it even if backend is offline
+  if (typeof window !== 'undefined') {
+    try {
+      const existing: Lead[] = JSON.parse(localStorage.getItem('opnixlabs_leads') || '[]');
+      localStorage.setItem('opnixlabs_leads', JSON.stringify([newLead, ...existing]));
+    } catch (err) {
+      console.warn('Could not save lead to localStorage:', err);
+    }
+  }
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/leads`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (res.ok) {
+      return await res.json();
+    }
+  } catch (error) {
+    console.warn('Backend API unavailable, lead saved to local storage:', error);
+  }
+
+  return newLead;
+}
+
 /**
  * Fallback posts for graceful initial preview
  */

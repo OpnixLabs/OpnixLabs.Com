@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { createLead } from '@/lib/api';
 
 export default function ContactPage() {
   const [name, setName] = useState('');
@@ -15,14 +16,10 @@ export default function ContactPage() {
     setLoading(true);
 
     try {
-      await fetch('http://localhost:8080/api/leads', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message }),
-      });
+      await createLead({ name, email, message });
       setSubmitted(true);
     } catch (err) {
-      console.warn('Backend unavailable, completing submission locally:', err);
+      console.warn('Submission error:', err);
       setSubmitted(true);
     } finally {
       setLoading(false);
@@ -61,7 +58,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-[11px] uppercase text-slate-500 dark:text-slate-400 font-semibold">Call Engineering</p>
-                <p className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm">+1 (800) 555-OPNIX</p>
+                <p className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm">+91 88826-59469</p>
               </div>
             </div>
 
@@ -70,8 +67,8 @@ export default function ContactPage() {
                 <MapPin className="w-4 h-4" />
               </div>
               <div>
-                <p className="text-[11px] uppercase text-slate-500 dark:text-slate-400 font-semibold">Global Offices</p>
-                <p className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm">Silicon Valley, CA • Washington DC • London UK</p>
+                <p className="text-[11px] uppercase text-slate-500 dark:text-slate-400 font-semibold">Location</p>
+                <p className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm">Uttar Pradesh, India</p>
               </div>
             </div>
           </div>
