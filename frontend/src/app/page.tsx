@@ -148,7 +148,7 @@ export default function HomePage() {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl">
               <Image
-                src="/image/hero.png"
+                src="/images/hero.png"
                 alt="OpnixLabs IT Agency Engineering Team"
                 width={700}
                 height={600}
@@ -236,7 +236,7 @@ export default function HomePage() {
             <div className="lg:col-span-5 relative">
               <div className="rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
                 <Image
-                  src="/image/about.png"
+                  src="/images/about.png"
                   alt="OpnixLabs IT Enterprise Team"
                   width={600}
                   height={500}

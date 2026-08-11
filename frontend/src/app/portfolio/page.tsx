@@ -30,7 +30,7 @@ export default function PortfolioPage() {
       title: 'Omnichannel Enterprise SaaS',
       category: 'Software Architecture',
       description: 'Custom SaaS platform providing automated inventory sync, customer analytics, and sub-100ms checkout workflows.',
-      image: '/image/hero.png',
+      image: '/images/hero.png',
       tags: ['SaaS Platform', 'TypeScript', 'PostgreSQL', 'High Concurrency'],
     },
   ];
