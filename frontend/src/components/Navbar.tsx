@@ -15,6 +15,7 @@ import {
   Twitter,
   Github,
   ArrowRight,
+  Clock,
 } from 'lucide-react';
 
 import ThemeToggle from './ThemeToggle';
@@ -48,6 +49,10 @@ export default function Navbar() {
               <MapPin className="w-3.5 h-3.5 text-cyan-400" />
               <span>Uttar Pradesh, India</span>
             </div>
+            <div className="flex items-center gap-1.5 text-slate-300">
+              <Clock className="w-3.5 h-3.5 text-cyan-400" />
+              <span>9:00 AM - 9:00 PM IST (03:30 - 15:30 UTC)</span>
+            </div>
             <a href="mailto:contact@opnixlabs.com" className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
               <Mail className="w-3.5 h-3.5 text-cyan-400" />
               <span>contact@opnixlabs.com</span>
@@ -64,13 +69,13 @@ export default function Navbar() {
               <span className="font-semibold">24/7 Live Support & Maintenance</span>
             </div>
             <div className="flex items-center gap-3 text-slate-400">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
+              <a href="https://www.linkedin.com/company/opnixlabs" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="LinkedIn">
                 <Linkedin className="w-3.5 h-3.5" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
+              <a href="https://x.com/OpnixLabs" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="Twitter / X">
                 <Twitter className="w-3.5 h-3.5" />
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
+              <a href="https://github.com/OpnixLabs" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="GitHub">
                 <Github className="w-3.5 h-3.5" />
               </a>
             </div>

@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import WhatsAppWidget from '@/components/WhatsAppWidget';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://opnixlabs.com';
 
@@ -116,9 +118,9 @@ export default function RootLayout({
       closes: '23:59',
     },
     sameAs: [
-      'https://twitter.com/opnixlabs',
-      'https://linkedin.com/company/opnixlabs',
-      'https://github.com/opnixlabs',
+      'https://x.com/OpnixLabs',
+      'https://www.linkedin.com/company/opnixlabs',
+      'https://github.com/OpnixLabs',
     ],
     areaServed: 'Worldwide',
     knowsAbout: [
@@ -143,6 +145,8 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <WhatsAppWidget />
+        <SpeedInsights />
       </body>
     </html>
   );

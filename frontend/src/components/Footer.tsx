@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Github, Twitter, Linkedin, ArrowRight, MapPin, Mail, Phone } from 'lucide-react';
+import { Github, Twitter, Linkedin, ArrowRight, MapPin, Mail, Phone, Clock } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -27,25 +27,28 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 pt-2">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/opnixlabs"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="p-2.5 rounded-md bg-slate-800/80 border border-slate-700 hover:border-slate-600 text-slate-300 hover:text-white transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/OpnixLabs"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Twitter / X"
                 className="p-2.5 rounded-md bg-slate-800/80 border border-slate-700 hover:border-slate-600 text-slate-300 hover:text-white transition-colors"
               >
                 <Twitter className="w-4 h-4" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/OpnixLabs"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
                 className="p-2.5 rounded-md bg-slate-800/80 border border-slate-700 hover:border-slate-600 text-slate-300 hover:text-white transition-colors"
               >
                 <Github className="w-4 h-4" />
@@ -119,6 +122,10 @@ export default function Footer() {
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
                 <span>Uttar Pradesh, India</span>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <Clock className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                <span>9:00 AM - 9:00 PM IST (Mon - Sun)</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-cyan-400 flex-shrink-0" />
