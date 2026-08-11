@@ -68,10 +68,10 @@ export default function HomePage() {
   ];
 
   const stats = [
-    { number: '150+', label: 'Global Clients Served' },
-    { number: '2,500+', label: 'Projects Delivered' },
+    { number: '15+', label: 'Global Clients Served' },
+    { number: '100+', label: 'Projects Delivered' },
     { number: '99.99%', label: 'Uptime SLA' },
-    { number: '10+', label: 'Years Experience' },
+    { number: '5+', label: 'Years Experience' },
   ];
 
   const testimonials = [
