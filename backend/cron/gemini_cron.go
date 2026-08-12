@@ -165,7 +165,7 @@ HTML REQUIREMENTS:
 - Properly escape characters so the overall response remains valid JSON.
 - Do not include any additional JSON fields, commentary, or explanation outside the JSON object.`
 
-	/*_prompt2 := `You are a renowned tech industry expert and thought leader. Write a comprehensive, highly engaging, and informative blog post about modern software architecture, AI integration, web development, or cloud technology trends.
+	/* prompt2 := `You are a renowned tech industry expert and thought leader. Write a comprehensive, highly engaging, and informative blog post about modern software architecture, AI integration, web development, or cloud technology trends.
 
 	Return your response strictly as a JSON object with two fields:
 	- "title": A catchy, professional headline for the blog post.

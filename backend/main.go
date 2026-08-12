@@ -61,7 +61,10 @@ func main() {
 		registerPostRoutes := func(r chi.Router) {
 			r.Get("/", postHandler.GetPosts)
 			r.Post("/", postHandler.CreatePost)
+			r.Get("/id/{id}", postHandler.GetPostByID)
 			r.Get("/{slug}", postHandler.GetPostBySlug)
+			r.Put("/{id}", postHandler.UpdatePost)
+			r.Delete("/{id}", postHandler.DeletePost)
 		}
 		r.Route("/api/posts", registerPostRoutes)
 		r.Route("/posts", registerPostRoutes)

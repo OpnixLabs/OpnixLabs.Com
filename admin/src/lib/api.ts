@@ -68,6 +68,50 @@ export async function createPost(payload: CreatePostPayload): Promise<Post> {
 }
 
 /**
+ * Fetch post by ID from Go backend
+ */
+export async function getPostById(id: number): Promise<Post> {
+  const res = await fetch(`${API_BASE_URL}/posts/id/${id}`, { cache: 'no-store' });
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error(errText || `Failed to fetch post #${id}: ${res.statusText}`);
+  }
+  return await res.json();
+}
+
+/**
+ * Update post by ID in Go backend
+ */
+export async function updatePost(id: number, payload: CreatePostPayload): Promise<Post> {
+  const res = await fetch(`${API_BASE_URL}/posts/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error(errText || `Failed to update post #${id}`);
+  }
+
+  return await res.json();
+}
+
+/**
+ * Delete post by ID from Go backend
+ */
+export async function deletePost(id: number): Promise<void> {
+  const res = await fetch(`${API_BASE_URL}/posts/${id}`, {
+    method: 'DELETE',
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error(errText || `Failed to delete post #${id}`);
+  }
+}
+
+/**
  * Trigger Gemini AI Auto-Blogging Cron Job
  */
 export async function triggerGeminiCron(): Promise<{ message: string }> {
