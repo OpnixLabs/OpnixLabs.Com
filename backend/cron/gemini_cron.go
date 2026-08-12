@@ -97,8 +97,8 @@ Return your response strictly as a JSON object with two fields:
 		},
 	}
 
-	// Try gemini-2.5-flash first, then gemini-2.0-flash and gemini-1.5-flash as fallbacks
-	modelsToTry := []string{"gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"}
+	// Try active models supported by Google GenAI API
+	modelsToTry := []string{"gemini-3.6-flash", "gemini-3.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"}
 	var resp *genai.GenerateContentResponse
 	var lastErr error
 
