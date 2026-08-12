@@ -96,10 +96,12 @@ export async function getLeads(): Promise<Lead[]> {
   }
 
   let remoteLeads: Lead[] = [];
+  let fetchedSuccessfully = false;
   try {
     const res = await fetch(`${API_BASE_URL}/leads`, { cache: 'no-store' });
     if (res.ok) {
       remoteLeads = await res.json();
+      fetchedSuccessfully = true;
     }
   } catch (error) {
     console.warn('Backend API unavailable, fetching local leads:', error);
@@ -112,22 +114,13 @@ export async function getLeads(): Promise<Lead[]> {
   });
 
   const merged = Array.from(combinedMap.values());
-  if (merged.length > 0) {
+  if (fetchedSuccessfully || merged.length > 0) {
     return merged.sort(
       (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
     );
   }
 
-  return [
-    {
-      id: 1,
-      name: 'Sarah Connor',
-      email: 'sarah@cyberdyne.io',
-      message: 'We want to build a Go microservice architecture for our AI engine.',
-      status: 'new',
-      created_at: new Date().toISOString(),
-    },
-  ];
+  return [];
 }
 
 /**
