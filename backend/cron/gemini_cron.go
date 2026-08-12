@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"regexp"
 	"strings"
 	"time"
 
@@ -387,40 +388,34 @@ Do not promise guaranteed results.
 IMAGE REQUIREMENTS
 ==================================================
 
-Identify 2–4 places where an image would genuinely improve the article.
+Identify 2–4 places where an image would genuinely improve the article and make it visually engaging for business readers.
 
-Images should help the reader understand the subject rather than merely decorate the page.
+Images should make the article feel premium, modern, and trustworthy — like content from a top-tier software consultancy.
 
 Prefer:
 
-- Architecture diagrams
-- Technical diagrams
-- Process diagrams
-- Comparison visualizations
-- Workflow illustrations
-- System architecture illustrations
-- Data-flow diagrams
-- Business process illustrations
-- Realistic business scenarios
-- Relevant professional illustrations
+- Clean, modern isometric illustrations of software concepts
+- Sleek dashboard mockups or UI wireframe illustrations
+- Futuristic technology landscapes with glowing nodes and connections
+- Abstract representations of data flow, cloud infrastructure, or API connections
+- Split-screen comparisons (e.g., old vs. new architecture)
+- Minimalist infographic-style visuals showing costs, timelines, or decision trees
+- Professional workspace scenes showing code editors, terminals, or deployment pipelines
+- Modern SaaS product interface illustrations
 
-Avoid generic stock-photo concepts such as:
+Avoid:
 
-"business people shaking hands"
-
-"happy businessman using laptop"
-
-"team meeting in office"
-
-unless the image is genuinely useful for the topic.
+- Generic stock photos of people in suits shaking hands
+- Clip-art style or cartoon-quality images
+- Overly abstract images that do not relate to the article topic
+- Images with text overlays or watermarks
+- Low-quality or pixelated visuals
 
 Do not recommend an image for every section.
 
 Do not invent real companies, customers, products, statistics, testimonials, or case studies in images.
 
 Do not include copyrighted logos or recognizable brand assets unless explicitly provided as input.
-
-Do not automatically include the OpnixLabs logo in every image.
 
 ==================================================
 IMAGE PLACEMENT
@@ -440,21 +435,21 @@ Each data-image-id must correspond to an object in the "images" array.
 
 Use IMAGE_1, IMAGE_2, IMAGE_3, etc.
 
-The image prompt should describe:
+The image prompt MUST follow this style for consistently attractive results:
 
-- Main subject
-- Visual composition
-- Important elements
-- Relationship between elements
-- Perspective
-- Style
-- Lighting when relevant
-- Color direction when relevant
-- Aspect ratio
+"[Subject description], modern digital illustration style, clean minimalist design, deep navy and cyan color palette, soft ambient lighting, professional tech aesthetic, wide aspect ratio 16:9, 4K quality"
 
-Image prompts should be detailed enough for an AI image-generation system to produce a useful result.
+Example good prompts:
 
-For technical diagrams, prioritize clarity and accurate conceptual representation over artistic complexity.
+"Modern SaaS dashboard showing real-time analytics with charts and graphs, dark mode UI, modern digital illustration style, clean minimalist design, deep navy and cyan color palette, soft ambient lighting, professional tech aesthetic, wide aspect ratio 16:9, 4K quality"
+
+"Isometric view of cloud infrastructure with load balancers, API gateways, microservices, and database clusters connected by glowing data streams, modern digital illustration style, clean minimalist design, deep navy and cyan color palette, soft ambient lighting, professional tech aesthetic, wide aspect ratio 16:9, 4K quality"
+
+"Split screen comparison showing legacy monolith application on left and modern microservices architecture on right, modern digital illustration style, clean minimalist design, deep navy and cyan color palette, soft ambient lighting, professional tech aesthetic, wide aspect ratio 16:9, 4K quality"
+
+Image prompts should be detailed enough for an AI image-generation system to produce a visually stunning result.
+
+Prioritize clarity and visual appeal over technical accuracy in diagrams.
 
 ==================================================
 IMAGE SEO
@@ -687,6 +682,37 @@ IMPORTANT:
 	if aiPost.Title == "" || aiPost.Content == "" {
 		return fmt.Errorf("received incomplete post data from Gemini API: title or content is empty")
 	}
+
+	// Populate images via Unsplash API (high-quality stock photos)
+	reImg := regexp.MustCompile(`(?i)<img\s+([^>]+)>`)
+	rePrompt := regexp.MustCompile(`(?i)data-image-prompt=["']([^"']+)["']`)
+	reAlt := regexp.MustCompile(`(?i)alt=["']([^"']+)["']`)
+
+	imgIndex := 0
+	aiPost.Content = reImg.ReplaceAllStringFunc(aiPost.Content, func(imgTag string) string {
+		if strings.Contains(strings.ToLower(imgTag), "src=") {
+			return imgTag
+		}
+
+		// Extract search query from prompt or alt text
+		searchQuery := ""
+		if match := rePrompt.FindStringSubmatch(imgTag); len(match) > 1 {
+			searchQuery = match[1]
+		} else if match := reAlt.FindStringSubmatch(imgTag); len(match) > 1 {
+			searchQuery = match[1]
+		} else {
+			searchQuery = aiPost.Title
+		}
+
+		// Fetch a relevant Unsplash image and upload to Cloudinary
+		finalImageUrl := utils.FetchUnsplashImage(searchQuery, imgIndex)
+		imgIndex++
+
+		attrs := strings.TrimPrefix(imgTag, "<img")
+		attrs = strings.TrimPrefix(attrs, "<IMG")
+		attrs = strings.TrimSuffix(attrs, ">")
+		return fmt.Sprintf(`<img src="%s" class="w-full h-auto rounded-md border border-slate-200 dark:border-slate-800 my-6 shadow-xl object-cover max-h-[500px]" %s>`, finalImageUrl, attrs)
+	})
 
 	// Generate slug from title + unix timestamp
 	slug := utils.GenerateSlug(aiPost.Title)

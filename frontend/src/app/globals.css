@@ -75,23 +75,46 @@ body {
 
 /* TipTap Editor & HTML Content Formatting */
 .prose {
-  color: #e2e8f0;
+  color: var(--foreground);
   line-height: 1.8;
 }
 
-.prose h1, .prose h2, .prose h3, .prose h4 {
-  color: #ffffff;
+html.dark .prose {
+  color: #cbd5e1;
+}
+
+html.light .prose {
+  color: #334155 !important;
+}
+
+html.dark .prose h1, html.dark .prose h2, html.dark .prose h3, html.dark .prose h4 {
+  color: #ffffff !important;
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+html.light .prose h1, html.light .prose h2, html.light .prose h3, html.light .prose h4 {
+  color: #0f172a !important;
   font-weight: 700;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
 
 .prose h1 { font-size: 2rem; }
-.prose h2 { font-size: 1.6rem; border-bottom: 1px solid rgba(56, 189, 248, 0.15); padding-bottom: 0.4rem; }
+.prose h2 { font-size: 1.6rem; border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.4rem; }
 .prose h3 { font-size: 1.3rem; }
 
 .prose p {
   margin-bottom: 1.25em;
+}
+
+html.light .prose p, html.light .prose li {
+  color: #334155 !important;
+}
+
+html.dark .prose p, html.dark .prose li {
+  color: #cbd5e1 !important;
 }
 
 .prose ul, .prose ol {
@@ -100,9 +123,17 @@ body {
   list-style-type: disc;
 }
 
-.prose code {
+html.dark .prose code {
   background: rgba(15, 23, 42, 0.9);
   color: #38bdf8;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+html.light .prose code {
+  background: #f1f5f9;
+  color: #0284c7;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-family: monospace;
@@ -112,9 +143,16 @@ body {
   border-left: 3px solid #00d2ff;
   padding-left: 1rem;
   font-style: italic;
-  color: #94a3b8;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+html.dark .prose blockquote {
+  color: #94a3b8;
+}
+
+html.light .prose blockquote {
+  color: #475569;
 }
 
 .tiptap {

@@ -7,9 +7,13 @@ import (
 )
 
 type Config struct {
-	Port         string
-	DatabaseURL  string
-	GeminiAPIKey string
+	Port                  string
+	DatabaseURL           string
+	GeminiAPIKey          string
+	CloudinaryCloudName   string
+	CloudinaryAPIKey      string
+	CloudinaryAPISecret   string
+	CloudinaryUploadPreset string
 }
 
 func LoadConfig() *Config {
@@ -22,8 +26,12 @@ func LoadConfig() *Config {
 	geminiKey := os.Getenv("GEMINI_API_KEY")
 
 	return &Config{
-		Port:         port,
-		DatabaseURL:  dbURL,
-		GeminiAPIKey: geminiKey,
+		Port:                  port,
+		DatabaseURL:           dbURL,
+		GeminiAPIKey:          geminiKey,
+		CloudinaryCloudName:   os.Getenv("CLOUDINARY_CLOUD_NAME"),
+		CloudinaryAPIKey:      os.Getenv("CLOUDINARY_API_KEY"),
+		CloudinaryAPISecret:   os.Getenv("CLOUDINARY_API_SECRET"),
+		CloudinaryUploadPreset: os.Getenv("CLOUDINARY_UPLOAD_PRESET"),
 	}
 }
