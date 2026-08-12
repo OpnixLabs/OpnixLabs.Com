@@ -128,6 +128,10 @@ func (h *LeadHandler) GetLeads(w http.ResponseWriter, r *http.Request) {
 		}
 		leads = append(leads, l)
 	}
+	if err := rows.Err(); err != nil {
+		http.Error(w, "Error iterating leads: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(leads)
@@ -156,7 +160,11 @@ func (h *LeadHandler) UpdateLeadStatus(w http.ResponseWriter, r *http.Request) {
 
 	rowsAffected, _ := result.RowsAffected()
 	if rowsAffected == 0 {
-		http.Error(w, "Lead not found", http.StatusNotFound)
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusNotFound)
+		json.NewEncoder(w).Encode(map[string]string{
+			"error": "Lead ID " + idStr + " does not exist in backend database",
+		})
 		return
 	}
 
@@ -181,7 +189,11 @@ func (h *LeadHandler) DeleteLead(w http.ResponseWriter, r *http.Request) {
 
 	rowsAffected, _ := result.RowsAffected()
 	if rowsAffected == 0 {
-		http.Error(w, "Lead not found", http.StatusNotFound)
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusNotFound)
+		json.NewEncoder(w).Encode(map[string]string{
+			"error": "Lead ID " + idStr + " does not exist in backend database",
+		})
 		return
 	}
 

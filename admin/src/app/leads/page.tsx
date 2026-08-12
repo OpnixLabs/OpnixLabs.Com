@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { getLeads, deleteLead, updateLeadStatus, Lead } from '@/lib/api';
-import { Users, Trash2, Mail, Calendar, Search, RefreshCw, CheckCircle2, Tag } from 'lucide-react';
+import { Users, Trash2, Mail, Calendar, Search, RefreshCw, CheckCircle2, Tag, AlertCircle } from 'lucide-react';
 
 export default function AdminLeadsPage() {
   const [leads, setLeads] = useState<Lead[]>([]);
@@ -11,14 +11,17 @@ export default function AdminLeadsPage() {
   const [deletingId, setDeletingId] = useState<number | null>(null);
   const [updatingId, setUpdatingId] = useState<number | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const fetchLeadsData = async () => {
     setLoading(true);
+    setErrorMessage(null);
     try {
       const data = await getLeads();
       setLeads(data);
-    } catch (err) {
+    } catch (err: any) {
       console.error('Failed to fetch leads:', err);
+      setErrorMessage(err.message || 'Failed to connect to Go backend API.');
     } finally {
       setLoading(false);
     }
@@ -29,14 +32,17 @@ export default function AdminLeadsPage() {
   }, []);
 
   const handleStatusChange = async (id: number, newStatus: string) => {
+    setErrorMessage(null);
+    setMessage(null);
     try {
       setUpdatingId(id);
       await updateLeadStatus(id, newStatus);
       setLeads((prev) => prev.map((l) => (l.id === id ? { ...l, status: newStatus } : l)));
       setMessage(`Lead status updated to '${newStatus}'.`);
-      setTimeout(() => setMessage(null), 2500);
+      setTimeout(() => setMessage(null), 3000);
     } catch (err: any) {
-      alert(err.message || 'Failed to update lead status.');
+      console.error('Lead status change error:', err);
+      setErrorMessage(err.message || 'Failed to update lead status on backend server.');
     } finally {
       setUpdatingId(null);
     }
@@ -44,14 +50,17 @@ export default function AdminLeadsPage() {
 
   const handleDelete = async (id: number) => {
     if (!window.confirm('Are you sure you want to delete this lead inquiry?')) return;
+    setErrorMessage(null);
+    setMessage(null);
     try {
       setDeletingId(id);
       await deleteLead(id);
       setLeads((prev) => prev.filter((l) => l.id !== id));
       setMessage('Lead deleted successfully.');
-      setTimeout(() => setMessage(null), 2500);
+      setTimeout(() => setMessage(null), 3000);
     } catch (err: any) {
-      alert(err.message || 'Failed to delete lead.');
+      console.error('Lead delete error:', err);
+      setErrorMessage(err.message || 'Failed to delete lead from backend server.');
     } finally {
       setDeletingId(null);
     }
@@ -87,7 +96,26 @@ export default function AdminLeadsPage() {
         </button>
       </div>
 
-      {/* Alert message */}
+      {/* Error Alert Box */}
+      {errorMessage && (
+        <div className="p-4 rounded-md bg-red-950/80 border border-red-800 text-red-200 text-xs flex items-center justify-between gap-3 animate-in fade-in">
+          <div className="flex items-center gap-2.5">
+            <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+            <div>
+              <p className="font-bold text-red-300">Backend API Error</p>
+              <p className="text-red-300/80">{errorMessage}</p>
+            </div>
+          </div>
+          <button
+            onClick={() => setErrorMessage(null)}
+            className="text-red-400 hover:text-white text-xs font-bold px-2 py-1 rounded bg-red-900/50 hover:bg-red-900 border border-red-700 transition-colors"
+          >
+            Dismiss
+          </button>
+        </div>
+      )}
+
+      {/* Success Alert Message */}
       {message && (
         <div className="p-3.5 rounded-md bg-emerald-950/60 border border-emerald-800 text-emerald-300 text-xs flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-emerald-400" />

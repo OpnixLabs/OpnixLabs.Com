@@ -49,6 +49,10 @@ func (h *PostHandler) GetPosts(w http.ResponseWriter, r *http.Request) {
 		}
 		posts = append(posts, p)
 	}
+	if err := rows.Err(); err != nil {
+		http.Error(w, "Failed iterating posts: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(posts)

@@ -144,16 +144,13 @@ export async function deleteLead(id: number): Promise<void> {
     }
   }
 
-  try {
-    const res = await fetch(`${API_BASE_URL}/leads/${id}`, {
-      method: 'DELETE',
-    });
+  const res = await fetch(`${API_BASE_URL}/leads/${id}`, {
+    method: 'DELETE',
+  });
 
-    if (!res.ok) {
-      console.warn(`Backend lead delete status: ${res.status}`);
-    }
-  } catch (e) {
-    console.warn('Backend API delete unavailable:', e);
+  if (!res.ok) {
+    const errorText = await res.text().catch(() => '');
+    throw new Error(`Backend API error (${res.status} ${res.statusText}): ${errorText || 'Failed to delete lead from backend database'}`);
   }
 }
 
@@ -171,17 +168,14 @@ export async function updateLeadStatus(id: number, status: string): Promise<void
     }
   }
 
-  try {
-    const res = await fetch(`${API_BASE_URL}/leads/${id}/status`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status }),
-    });
+  const res = await fetch(`${API_BASE_URL}/leads/${id}/status`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ status }),
+  });
 
-    if (!res.ok) {
-      console.warn(`Backend lead status update failed: ${res.status}`);
-    }
-  } catch (e) {
-    console.warn('Backend API lead status update unavailable:', e);
+  if (!res.ok) {
+    const errorText = await res.text().catch(() => '');
+    throw new Error(`Backend API error (${res.status} ${res.statusText}): ${errorText || 'Failed to update lead status in backend database'}`);
   }
 }
