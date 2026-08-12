@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, Sparkles, RotateCcw, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, Loader2, Sparkles, RotateCcw, ShieldCheck } from 'lucide-react';
 import { createLead } from '@/lib/api';
 
 export default function ContactPage() {
@@ -72,6 +72,16 @@ export default function ContactPage() {
               <div>
                 <p className="text-[11px] uppercase text-slate-500 dark:text-slate-400 font-semibold">Call Engineering</p>
                 <p className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm">+91 88826-59469</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3.5">
+              <div className="w-9 h-9 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 flex-shrink-0">
+                <Clock className="w-4 h-4" />
+              </div>
+              <div>
+                <p className="text-[11px] uppercase text-slate-500 dark:text-slate-400 font-semibold">Working Hours</p>
+                <p className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm">9:00 AM - 9:00 PM IST (Mon - Sun)</p>
               </div>
             </div>
 

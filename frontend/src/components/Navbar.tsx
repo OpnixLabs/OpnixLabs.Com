@@ -51,7 +51,7 @@ export default function Navbar() {
             </div>
             <div className="flex items-center gap-1.5 text-slate-300">
               <Clock className="w-3.5 h-3.5 text-cyan-400" />
-              <span>9:00 AM - 9:00 PM IST (03:30 - 15:30 UTC)</span>
+              <span>9:00 AM - 9:00 PM IST (Mon - Sun)</span>
             </div>
             <a href="mailto:contact@opnixlabs.com" className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
               <Mail className="w-3.5 h-3.5 text-cyan-400" />
