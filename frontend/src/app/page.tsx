@@ -54,13 +54,13 @@ export default function HomePage() {
 
   const caseStudies = [
     {
-      image: '/images/project1.png',
+      image: '/images/project1.jpg',
       category: 'FinTech & Banking',
       title: 'Enterprise Wealth Analytics Platform',
       desc: 'Built a sub-second financial portal for institutional investors handling high-volume real-time transactions.',
     },
     {
-      image: '/images/project2.png',
+      image: '/images/project2.jpg',
       category: 'Cloud Infrastructure',
       title: 'Global Multi-Cloud Data Gateway',
       desc: 'Architected zero-downtime cloud infrastructure for global enterprise logistics serving 50M+ daily requests.',
@@ -162,10 +162,11 @@ export default function HomePage() {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl bg-slate-900/40">
               <Image
-                src="/images/hero.png"
+                src="/images/hero.jpg"
                 alt="OpnixLabs Digital Solutions & Software Engineering"
                 width={750}
                 height={600}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                 priority
               />
@@ -239,10 +240,11 @@ export default function HomePage() {
             <div className="lg:col-span-5 relative">
               <div className="rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
                 <Image
-                  src="/images/about.png"
+                  src="/images/about.jpg"
                   alt="OpnixLabs IT Enterprise Team"
                   width={600}
                   height={500}
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -360,6 +362,7 @@ export default function HomePage() {
                   src={c.image}
                   alt={c.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 text-cyan-400 text-xs font-bold border border-cyan-500/30">
@@ -410,7 +413,7 @@ export default function HomePage() {
 
               <div className="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-cyan-400">
-                  <Image src={t.avatar} alt={t.author} fill className="object-cover" />
+                  <Image src={t.avatar} alt={t.author} fill sizes="48px" className="object-cover" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 dark:text-white text-sm">{t.author}</h4>
