@@ -80,13 +80,13 @@ func main() {
 				http.Error(w, "Auto blogger is not configured", http.StatusBadRequest)
 				return
 			}
-			go func() {
-				if err := autoBlogger.GenerateAndSavePost(); err != nil {
-					log.Printf("Manual trigger error: %v\n", err)
-				}
-			}()
+			if err := autoBlogger.GenerateAndSavePost(); err != nil {
+				log.Printf("Manual trigger error: %v\n", err)
+				http.Error(w, "Failed to generate AI blog post: "+err.Error(), http.StatusInternalServerError)
+				return
+			}
 			w.Header().Set("Content-Type", "application/json")
-			w.Write([]byte(`{"message": "Gemini auto-blogging process triggered in background"}`))
+			w.Write([]byte(`{"message": "Gemini AI blog post generated and published successfully"}`))
 		}
 		r.Post("/api/admin/trigger-cron", triggerCronHandler)
 		r.Post("/admin/trigger-cron", triggerCronHandler)
