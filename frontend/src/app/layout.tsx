@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppWidget from '@/components/WhatsAppWidget';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from "@vercel/analytics/next"
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -162,6 +163,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppWidget />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
