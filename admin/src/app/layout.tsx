@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import AdminAuthGuard from '@/components/AdminAuthGuard';
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: 'OpnixLabs Admin Console',
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-grow">{children}</main>
         </AdminAuthGuard>
+        <Analytics />
       </body>
     </html>
   );
