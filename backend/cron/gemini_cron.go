@@ -9,9 +9,10 @@ import (
 	"os"
 	"strings"
 
+	"opnixlabs-backend/utils"
+
 	"github.com/robfig/cron/v3"
 	"google.golang.org/genai"
-	"opnixlabs-backend/utils"
 )
 
 type GeminiPostResponse struct {
@@ -81,7 +82,7 @@ Return your response strictly as a JSON object with two fields:
 - "title": A catchy, professional headline for the blog post.
 - "content": The full blog post article formatted in clean HTML (use <h2>, <h3>, <p>, <ul>, <li>, <strong>, <em>, and <code> tags where appropriate. Do NOT wrap in <html> or <body> tags, only return semantic body elements).`
 
-	resp, err := client.Models.GenerateContent(ctx, "gemini-2.5-flash", genai.Text(prompt), &genai.GenerateContentConfig{
+	resp, err := client.Models.GenerateContent(ctx, "gemini-2.5-flash-lite", genai.Text(prompt), &genai.GenerateContentConfig{
 		ResponseMIMEType: "application/json",
 		ResponseSchema: &genai.Schema{
 			Type: genai.TypeObject,
