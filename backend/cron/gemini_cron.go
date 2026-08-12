@@ -8,6 +8,7 @@ import (
 	"log"
 	"os"
 	"strings"
+	"time"
 
 	"opnixlabs-backend/utils"
 
@@ -68,7 +69,9 @@ func (c *AutoBloggingCron) GenerateAndSavePost() error {
 		return fmt.Errorf("GEMINI_API_KEY environment variable is missing")
 	}
 
-	ctx := context.Background()
+	ctx, cancel := context.WithTimeout(context.Background(), 45*time.Second)
+	defer cancel()
+
 	client, err := genai.NewClient(ctx, &genai.ClientConfig{
 		APIKey: apiKey,
 	})
@@ -82,7 +85,7 @@ Return your response strictly as a JSON object with two fields:
 - "title": A catchy, professional headline for the blog post.
 - "content": The full blog post article formatted in clean HTML (use <h2>, <h3>, <p>, <ul>, <li>, <strong>, <em>, and <code> tags where appropriate. Do NOT wrap in <html> or <body> tags, only return semantic body elements).`
 
-	resp, err := client.Models.GenerateContent(ctx, "gemini-2.5-flash-lite", genai.Text(prompt), &genai.GenerateContentConfig{
+	config := &genai.GenerateContentConfig{
 		ResponseMIMEType: "application/json",
 		ResponseSchema: &genai.Schema{
 			Type: genai.TypeObject,
@@ -92,10 +95,22 @@ Return your response strictly as a JSON object with two fields:
 			},
 			Required: []string{"title", "content"},
 		},
-	})
+	}
 
-	if err != nil {
-		return fmt.Errorf("failed to generate content from Gemini API: %w", err)
+	// Try gemini-2.5-flash first, then gemini-1.5-flash as fallback
+	modelsToTry := []string{"gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash-lite"}
+	var resp *genai.GenerateContentResponse
+	var lastErr error
+
+	for _, modelName := range modelsToTry {
+		resp, lastErr = client.Models.GenerateContent(ctx, modelName, genai.Text(prompt), config)
+		if lastErr == nil && len(resp.Candidates) > 0 && resp.Candidates[0].Content != nil {
+			break
+		}
+	}
+
+	if lastErr != nil {
+		return fmt.Errorf("failed to generate content from Gemini API: %w", lastErr)
 	}
 
 	if len(resp.Candidates) == 0 || resp.Candidates[0].Content == nil {
