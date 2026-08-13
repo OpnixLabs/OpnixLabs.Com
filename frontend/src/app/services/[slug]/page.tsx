@@ -348,6 +348,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     src={cs.image}
                     alt={cs.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                    quality={85}
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-cyan-500 text-slate-950 text-[10px] font-extrabold shadow-md">

@@ -181,6 +181,8 @@ export default function AboutStoryTimeline() {
                     src={milestones[0].imageSrc || '/images/about.jpg'}
                     alt={milestones[0].imageAlt || 'OpnixLabs Story'}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    quality={85}
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/10 to-transparent" />
@@ -263,9 +265,9 @@ export default function AboutStoryTimeline() {
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider border border-cyan-500/20">
               <Users className="w-3.5 h-3.5" /> Specialized Talent
             </span>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">
               Every Project Backed by Senior Engineering Pods
-            </h3>
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -282,9 +284,9 @@ export default function AboutStoryTimeline() {
                 <div className="w-12 h-12 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
                   {d.icon}
                 </div>
-                <h4 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                   {d.title}
-                </h4>
+                </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                   {d.desc}
                 </p>

@@ -108,9 +108,9 @@ export default function AboutCultureBadges() {
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-bold uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" /> Ready to Build?
             </span>
-            <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
               Partner with OpnixLabs Senior Technical Architects
-            </h3>
+            </h2>
             <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-normal">
               Discuss your custom software engineering requirements, cloud infrastructure, or API optimization goals with our core team.
             </p>

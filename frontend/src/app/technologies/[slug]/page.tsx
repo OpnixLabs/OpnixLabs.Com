@@ -158,6 +158,8 @@ export default async function TechnologyPage({ params }: PageProps) {
             src="/images/hero.jpg"
             alt={`${tech.name} Developers`}
             fill
+            sizes="100vw"
+            quality={85}
             priority
             className="object-cover object-center brightness-[0.2]"
           />

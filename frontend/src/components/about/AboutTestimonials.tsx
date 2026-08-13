@@ -122,9 +122,9 @@ export default function AboutTestimonials() {
               {/* Author Info */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between pt-6 border-t border-slate-200 dark:border-slate-800 gap-4">
                 <div>
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                     {current.author}
-                  </h4>
+                  </h3>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
                     {current.role} • <span className="font-semibold text-slate-900 dark:text-slate-200">{current.companyCategory}</span>
                   </p>

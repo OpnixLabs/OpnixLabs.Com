@@ -21,32 +21,32 @@ import {
 export default function HomePage() {
   const services = [
     {
-      icon: <Globe className="w-6 h-6 text-cyan-400" />,
+      icon: <Globe className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
       title: 'Custom Web & Software Development',
       desc: 'High-converting web applications, SaaS platforms, and enterprise software built for performance, security, and scalability.',
     },
     {
-      icon: <Database className="w-6 h-6 text-cyan-400" />,
+      icon: <Database className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
       title: 'Cloud Architecture & DevOps',
       desc: 'Resilient cloud infrastructure, multi-region deployments, database optimization, and 24/7 automated monitoring.',
     },
     {
-      icon: <Layers className="w-6 h-6 text-cyan-400" />,
+      icon: <Layers className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
       title: 'IT Strategy & Technical Consulting',
       desc: 'Expert guidance on enterprise technology roadmaps, system modernizations, software audits, and architecture design.',
     },
     {
-      icon: <Lock className="w-6 h-6 text-cyan-400" />,
+      icon: <Lock className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
       title: 'Cybersecurity & Compliance',
       desc: 'Comprehensive security assessments, data protection, identity management, and compliance auditing for enterprise systems.',
     },
     {
-      icon: <Zap className="w-6 h-6 text-cyan-400" />,
+      icon: <Zap className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
       title: 'Digital Transformation',
       desc: 'Modernizing legacy software into agile cloud-native platforms to accelerate operational efficiency and speed to market.',
     },
     {
-      icon: <ShieldCheck className="w-6 h-6 text-cyan-400" />,
+      icon: <ShieldCheck className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
       title: 'API Engineering & Integrations',
       desc: 'Seamless integration of third-party platforms, custom RESTful and GraphQL APIs, and automated enterprise workflows.',
     },
@@ -104,7 +104,7 @@ export default function HomePage() {
               That Build Your Business
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-lg">
+            <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 font-medium leading-relaxed max-w-lg">
               Custom Web Applications | SaaS Platforms<br />
               Modern Websites | Seamless Experiences
             </p>
@@ -123,9 +123,9 @@ export default function HomePage() {
 
             {/* Our Expertise Row */}
             <div className="pt-6 space-y-3">
-              <h3 className="text-xs uppercase tracking-widest font-bold text-slate-500 dark:text-slate-400">
+              <span className="block text-xs uppercase tracking-widest font-bold text-slate-600 dark:text-slate-400">
                 Our Expertise
-              </h3>
+              </span>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
                   <div className="p-2 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform">
@@ -167,6 +167,7 @@ export default function HomePage() {
                 width={750}
                 height={600}
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={85}
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                 priority
               />
@@ -176,12 +177,12 @@ export default function HomePage() {
       </section>
 
       {/* CLIENT LOGO TICKER / PARTNERS */}
-      <section className="border-y border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 py-8">
+      <section className="border-y border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-900/50 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs uppercase tracking-widest text-slate-400 font-semibold mb-6">
+          <p className="text-center text-xs uppercase tracking-widest text-slate-600 dark:text-slate-400 font-bold mb-6">
             Trusted By Leading Enterprises & Fast-Growing Tech Companies
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 text-slate-400 dark:text-slate-500 font-black text-lg sm:text-xl tracking-wider">
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 text-slate-700 dark:text-slate-400 font-black text-lg sm:text-xl tracking-wider">
             <span className="hover:text-slate-900 dark:hover:text-white transition-colors">CANVA TECH</span>
             <span className="hover:text-slate-900 dark:hover:text-white transition-colors">TRESORIT CLOUD</span>
             <span className="hover:text-slate-900 dark:hover:text-white transition-colors">COUNT.IT</span>
@@ -191,196 +192,125 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CORE SERVICES GRID (Techmos Style) */}
+      {/* CORE SERVICES GRID */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
             Our Enterprise Capabilities
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-            High-Impact Software & IT Services
+            Core Engineering & IT Services
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
-            We provide end-to-end IT solutions designed to optimize operational efficiency and maximize digital growth.
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+            From modern web applications to complex cloud microservices, we build scalable software solutions designed for high-availability enterprise environments.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s, i) => (
+          {services.map((service, index) => (
             <div
-              key={i}
-              className="glass-panel p-7 rounded-md glass-panel-hover border border-slate-200 dark:border-slate-800 space-y-5 flex flex-col justify-between"
+              key={index}
+              className="p-7 rounded-xl glass-panel border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all duration-300 space-y-4 group flex flex-col justify-between"
             >
               <div className="space-y-4">
-                <div className="w-14 h-14 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-                  {s.icon}
+                <div className="w-12 h-12 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">{s.title}</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">{s.desc}</p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-200 dark:border-slate-800/80">
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors"
-                >
-                  Explore Solution <ChevronRight className="w-3.5 h-3.5" />
-                </Link>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  {service.desc}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ABOUT US SPOTLIGHT & OVERLAPPING IMAGE (Techmos Style) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel p-8 sm:p-12 rounded-md border border-slate-200 dark:border-slate-800">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Overlapping Image Container */}
-            <div className="lg:col-span-5 relative">
-              <div className="rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image
-                  src="/images/about.jpg"
-                  alt="OpnixLabs IT Enterprise Team"
-                  width={600}
-                  height={500}
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-
-              {/* Floating Experience Badge - Circular */}
-              <div className="absolute -bottom-6 -right-4 w-28 h-28 rounded-full bg-slate-900 border-4 border-cyan-500 shadow-2xl flex flex-col items-center justify-center text-center text-white p-2">
-                <span className="text-xl font-black text-cyan-400">5+</span>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-300 leading-tight">Years Of Excellence</span>
-              </div>
-            </div>
-
-            {/* About Text Content */}
-            <div className="lg:col-span-7 space-y-6">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
-                Why Work With Us
-              </span>
-
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
+      {/* STATS SECTION */}
+      <section className="bg-slate-900 border-y border-cyan-500/30 py-16 text-white shadow-2xl relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase tracking-wider border border-cyan-500/30">
+              Proven Performance
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+              Empowering Enterprise Tech Systems
+            </h2>
+            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
                 Accelerating Business Growth Through Strategic Software Architecture
-              </h2>
-
-              <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
-                OpnixLabs is a full-service IT solutions agency. We partner with growth-minded leaders to engineer resilient software systems, high-converting digital platforms, and enterprise cloud solutions.
               </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-500 dark:text-cyan-400 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-sm text-slate-900 dark:text-white">Enterprise Scalability</h4>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Engineered to handle high traffic and critical business workloads seamlessly.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-500 dark:text-cyan-400 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-sm text-slate-900 dark:text-white">24/7 Managed Operations</h4>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Continuous system health monitoring and dedicated technical support.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-500 dark:text-cyan-400 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-sm text-slate-900 dark:text-white">Security & Compliance</h4>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Strict adherence to data privacy standards and industry security posture.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-500 dark:text-cyan-400 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-sm text-slate-900 dark:text-white">Rapid Time-to-Market</h4>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Agile sprint cycles ensuring fast deployment without compromising code quality.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-colors"
-                >
-                  Learn More About Our Company
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* STAT COUNTERS BAR */}
-      <section className="bg-slate-900 text-white py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((st, i) => (
-              <div key={i} className="space-y-2">
-                <div className="text-3xl sm:text-5xl font-black text-cyan-400">{st.number}</div>
-                <div className="text-xs sm:text-sm text-slate-400 font-semibold">{st.label}</div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="p-6 rounded-xl bg-slate-950/60 border border-slate-800 text-center space-y-2"
+              >
+                <div className="text-3xl sm:text-5xl font-black text-cyan-400">
+                  {stat.number}
+                </div>
+                <div className="text-xs sm:text-sm font-semibold text-slate-300">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FEATURED CASE STUDIES / PORTFOLIO */}
+      {/* FEATURED CASE STUDIES */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-          <div className="space-y-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
-              Selected Projects
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Enterprise Case Studies
-            </h2>
-          </div>
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center gap-2 text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:text-cyan-500"
-          >
-            View All Projects <ArrowRight className="w-4 h-4" />
-          </Link>
+        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
+            Case Studies
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            Featured Engineering Case Studies
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+            Real-world software challenges solved through innovative architecture, clean code, and cloud automation.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {caseStudies.map((c, i) => (
+          {caseStudies.map((cs, index) => (
             <div
-              key={i}
-              className="glass-panel rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 space-y-4 group"
+              key={index}
+              className="rounded-xl glass-panel overflow-hidden border border-slate-200 dark:border-slate-800 group hover:border-cyan-500/40 transition-all flex flex-col justify-between"
             >
-              <div className="relative h-64 w-full overflow-hidden">
+              <div className="relative h-64 sm:h-72 w-full overflow-hidden">
                 <Image
-                  src={c.image}
-                  alt={c.title}
+                  src={cs.image}
+                  alt={cs.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  quality={85}
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 text-cyan-400 text-xs font-bold border border-cyan-500/30">
-                  {c.category}
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 rounded-full bg-slate-900/90 text-cyan-400 text-xs font-bold uppercase border border-slate-700">
+                    {cs.category}
+                  </span>
                 </div>
               </div>
 
-              <div className="p-6 space-y-3">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors">
-                  {c.title}
+              <div className="p-6 sm:p-8 space-y-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                  {cs.title}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">{c.desc}</p>
+                <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  {cs.desc}
+                </p>
                 <div className="pt-2">
                   <Link
-                    href="/portfolio"
-                    className="inline-flex items-center gap-2 text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline"
+                    href="/case-studies"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline"
                   >
-                    View Project Case Study <ArrowRight className="w-3.5 h-3.5" />
+                    <span>Read Full Case Study</span>
+                    <ChevronRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
@@ -389,35 +319,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CLIENT TESTIMONIALS */}
+      {/* TESTIMONIALS SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
-            Testimonials
+            Client Testimonials
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-            What Our Clients Say
+            Trusted Partner Testimonials
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((t, i) => (
+          {testimonials.map((t, index) => (
             <div
-              key={i}
-              className="glass-panel p-8 rounded-md border border-slate-200 dark:border-slate-800 space-y-6 relative"
+              key={index}
+              className="p-8 rounded-xl glass-panel border border-slate-200 dark:border-slate-800 space-y-6 flex flex-col justify-between"
             >
-              <Quote className="w-10 h-10 text-cyan-500/20 absolute top-6 right-6" />
-              <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed italic">
-                "{t.quote}"
-              </p>
-
+              <blockquote className="text-slate-700 dark:text-slate-200 text-sm sm:text-base italic leading-relaxed">
+                “{t.quote}”
+              </blockquote>
               <div className="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-cyan-400">
-                  <Image src={t.avatar} alt={t.author} fill sizes="48px" className="object-cover" />
-                </div>
+                <Image
+                  src={t.avatar}
+                  alt={t.author}
+                  width={44}
+                  height={44}
+                  className="rounded-full object-cover border border-cyan-500/40"
+                />
                 <div>
-                  <h4 className="font-bold text-slate-900 dark:text-white text-sm">{t.author}</h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">{t.role}</p>
+                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                    {t.author}
+                  </h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">
+                    {t.role}
+                  </p>
                 </div>
               </div>
             </div>
@@ -425,29 +361,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PRE-FOOTER HIGH-IMPACT CALLOUT */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel p-8 sm:p-14 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 text-center space-y-6 relative overflow-hidden shadow-xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 text-xs font-bold">
-            <Headphones className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
-            <span>Schedule A Free Project Estimate</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white max-w-3xl mx-auto leading-tight">
-            Ready to Accelerate Your <span className="gradient-text">Digital Transformation</span>?
+      {/* FINAL CTA SECTION */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="p-8 sm:p-12 rounded-2xl bg-slate-900 text-white border border-cyan-500/40 text-center space-y-6 shadow-2xl">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
+            Ready to Scale Your Enterprise Software?
           </h2>
-
-          <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed font-medium">
-            Let’s discuss your software engineering, web development, or enterprise cloud requirements with our technical team.
+          <p className="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
+            Schedule a free technical consultation with our software architects to discuss your custom project requirements and cloud goals.
           </p>
-
-          <div className="pt-4">
+          <div className="pt-2">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm shadow-xl hover:shadow-cyan-500/30 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-sm shadow-xl shadow-cyan-400/25 transition-all"
             >
-              <span>Contact Engineering Team</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Schedule Free Consultation</span>
+              <ArrowRight className="w-4 h-4 text-slate-950" />
             </Link>
           </div>
         </div>
