@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { getPosts } from '@/lib/api';
 import { getAllCaseStudySlugs } from '@/data/caseStudies';
 import { popularTechnologies } from '@/data/technologies';
+import { servicesData } from '@/data/services';
 
 export const revalidate = 3600;
 
@@ -23,7 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: (route === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
-    priority: route === '' || route.startsWith('/case-studies') || route === '/technologies' ? 0.9 : 0.8,
+    priority: route === '' || route.startsWith('/case-studies') || route === '/technologies' || route === '/services' ? 0.9 : 0.8,
   }));
 
   // Dynamic Case Studies routes
@@ -43,6 +44,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.85,
   }));
 
+  // Dynamic Service Landing Page routes for SEO
+  const serviceSlugs = Array.from(
+    new Set([
+      ...servicesData.topServices.map((s) => s.href.replace('/services/', '')),
+      ...servicesData.enterpriseFocused.map((s) => s.href.replace('/services/', '')),
+    ])
+  );
+  const serviceRoutes = serviceSlugs.map((slug) => ({
+    url: `${baseUrl}/services/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  }));
+
   // Fetch dynamic blog posts
   try {
     const posts = await getPosts({ next: { revalidate: 3600 } });
@@ -52,9 +67,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     }));
-    return [...routes, ...caseStudyRoutes, ...techRoutes, ...blogRoutes];
+    return [...routes, ...caseStudyRoutes, ...techRoutes, ...serviceRoutes, ...blogRoutes];
   } catch (error) {
     console.warn('Failed to fetch blog posts for sitemap generation:', error);
-    return [...routes, ...caseStudyRoutes, ...techRoutes];
+    return [...routes, ...caseStudyRoutes, ...techRoutes, ...serviceRoutes];
   }
 }
