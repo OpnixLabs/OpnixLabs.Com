@@ -425,28 +425,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PRE-FOOTER HIGH-IMPACT CALLOUT (Techmos Style) */}
+      {/* PRE-FOOTER HIGH-IMPACT CALLOUT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel p-8 sm:p-14 rounded-md border border-slate-200 dark:border-slate-800 text-center space-y-6 relative overflow-hidden bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 text-white">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold">
-            <Headphones className="w-4 h-4 text-cyan-400" />
+        <div className="glass-panel p-8 sm:p-14 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 text-center space-y-6 relative overflow-hidden shadow-xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 text-xs font-bold">
+            <Headphones className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
             <span>Schedule A Free Project Estimate</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-black max-w-3xl mx-auto leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white max-w-3xl mx-auto leading-tight">
             Ready to Accelerate Your <span className="gradient-text">Digital Transformation</span>?
           </h2>
 
-          <p className="text-slate-300 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed font-medium">
             Let’s discuss your software engineering, web development, or enterprise cloud requirements with our technical team.
           </p>
 
           <div className="pt-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-md bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm shadow-xl hover:shadow-cyan-500/30 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm shadow-xl hover:shadow-cyan-500/30 transition-all"
             >
-              Contact Engineering Team
+              <span>Contact Engineering Team</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
