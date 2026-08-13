@@ -183,10 +183,10 @@ export default function AboutStoryTimeline() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
-                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white p-3 sm:p-4 glass-panel border-white/10 rounded-md">
-                    <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-cyan-300">Engineering Standard</p>
-                    <p className="text-xs text-slate-200 mt-0.5 sm:mt-1">Zero Tech Debt & Sub-100ms API Architecture</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/10 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-3 sm:p-4 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/80 dark:border-slate-800/80 shadow-xl transition-colors">
+                    <p className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">Engineering Standard</p>
+                    <p className="text-xs font-semibold text-slate-900 dark:text-slate-100 mt-0.5 sm:mt-1">Zero Tech Debt & Sub-100ms API Architecture</p>
                   </div>
                 </div>
               </motion.div>

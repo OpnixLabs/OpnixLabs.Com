@@ -326,7 +326,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       </section>
 
       {/* 4. FEATURED CASE STUDIES (3 CARDS GRID) */}
-      <section id="case-studies" className="py-16 sm:py-24 bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+      <section id="case-studies" className="py-10 sm:py-16 bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-xs font-extrabold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">

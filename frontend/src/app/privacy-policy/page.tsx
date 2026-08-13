@@ -112,9 +112,9 @@ export default function PrivacyPolicyPage() {
         </section>
 
         {/* Contact DPO Banner */}
-        <div className="glass-panel p-8 rounded-xl border border-cyan-500/30 text-center space-y-4 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 text-slate-800 dark:text-white">
-          <h3 className="text-xl font-bold">Data Protection Office</h3>
-          <p className="text-xs sm:text-sm text-slate-400">
+        <div className="p-8 rounded-xl border border-cyan-500/40 text-center space-y-4 bg-slate-900 text-white shadow-2xl">
+          <h3 className="text-xl font-bold text-white">Data Protection Office</h3>
+          <p className="text-xs sm:text-sm text-slate-300">
             For privacy inquiries, data deletion requests, or compliance audits, contact our Privacy Team:
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-xs text-cyan-400 font-semibold pt-2">

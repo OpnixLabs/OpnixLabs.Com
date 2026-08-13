@@ -115,9 +115,9 @@ export default function RefundPolicyPage() {
         </section>
 
         {/* Contact Banner */}
-        <div className="glass-panel p-8 rounded-xl border border-cyan-500/30 text-center space-y-4 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 dark:text-white text-slate-800">
-          <h3 className="text-xl font-bold">Need Help with Billing or Cancellation?</h3>
-          <p className="text-xs sm:text-sm text-slate-400">
+        <div className="p-8 rounded-xl border border-cyan-500/40 text-center space-y-4 bg-slate-900 text-white shadow-2xl">
+          <h3 className="text-xl font-bold text-white">Need Help with Billing or Cancellation?</h3>
+          <p className="text-xs sm:text-sm text-slate-300">
             Contact our dedicated billing support team for prompt assistance:
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-xs text-cyan-400 font-semibold pt-2">
