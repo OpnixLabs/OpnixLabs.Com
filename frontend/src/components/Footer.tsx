@@ -158,16 +158,19 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
           <p>© {new Date().getFullYear()} OpnixLabs Inc. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">
+          <div className="flex flex-wrap gap-4 sm:gap-6">
+            <Link href="/privacy-policy" className="hover:text-cyan-400 transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link href="/terms-of-service" className="hover:text-cyan-400 transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link href="/refund-policy" className="hover:text-cyan-400 transition-colors">
+              Refund Policy
+            </Link>
+            <Link href="/security-sla" className="hover:text-cyan-400 transition-colors">
               Security SLA
-            </a>
+            </Link>
           </div>
         </div>
       </div>
