@@ -121,7 +121,14 @@ export default function Footer() {
             <div className="space-y-3 text-xs sm:text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span>Uttar Pradesh, India</span>
+                <a
+                  href="https://maps.google.com/?q=Uttar+Pradesh,+India"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cyan-400 transition-colors"
+                >
+                  Uttar Pradesh, India
+                </a>
               </div>
               <div className="flex items-start gap-2.5">
                 <Clock className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -129,11 +136,21 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                <span>contact@opnixlabs.com</span>
+                <a
+                  href="mailto:contact@opnixlabs.com"
+                  className="hover:text-cyan-400 transition-colors"
+                >
+                  contact@opnixlabs.com
+                </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                <span>+91 88826-59469</span>
+                <a
+                  href="tel:+918882659469"
+                  className="hover:text-cyan-400 transition-colors"
+                >
+                  +91 88826-59469
+                </a>
               </div>
             </div>
           </div>

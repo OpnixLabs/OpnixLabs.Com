@@ -61,7 +61,12 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-[11px] uppercase text-slate-500 dark:text-slate-400 font-semibold">Email Us</p>
-                <p className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm">contact@opnixlabs.com</p>
+                <a
+                  href="mailto:contact@opnixlabs.com"
+                  className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-block"
+                >
+                  contact@opnixlabs.com
+                </a>
               </div>
             </div>
 
@@ -71,7 +76,12 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-[11px] uppercase text-slate-500 dark:text-slate-400 font-semibold">Call Engineering</p>
-                <p className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm">+91 88826-59469</p>
+                <a
+                  href="tel:+918882659469"
+                  className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-block"
+                >
+                  +91 88826-59469
+                </a>
               </div>
             </div>
 
@@ -91,7 +101,14 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-[11px] uppercase text-slate-500 dark:text-slate-400 font-semibold">Location</p>
-                <p className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm">Uttar Pradesh, India</p>
+                <a
+                  href="https://maps.google.com/?q=Uttar+Pradesh,+India"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-block"
+                >
+                  Uttar Pradesh, India
+                </a>
               </div>
             </div>
           </div>

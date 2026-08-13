@@ -122,9 +122,9 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA Box matching BairesDev Screenshot 3 */}
-      <div className="glass-panel p-8 sm:p-12 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-900 text-white text-center space-y-6 shadow-xl">
-        <h2 className="text-2xl sm:text-4xl font-extrabold">You define the scope; we deliver the team.</h2>
-        <p className="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto">
+      <div className="p-8 sm:p-12 rounded-2xl border border-slate-800 bg-slate-900 text-white text-center space-y-6 shadow-xl relative overflow-hidden">
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-white">You define the scope; we deliver the team.</h2>
+        <p className="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
           Scale your software development capabilities in under 48 hours with top 1% nearshore engineers.
         </p>
         <div>

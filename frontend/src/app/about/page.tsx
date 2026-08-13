@@ -59,26 +59,63 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-6 space-y-5">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-              Our Company Mission
-            </h2>
+          <div className="lg:col-span-6 space-y-6">
+            <div className="space-y-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider border border-cyan-500/20">
+                <Sparkles className="w-3.5 h-3.5" /> Driven By Engineering Excellence
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                Our Company Mission
+              </h2>
+            </div>
+
             <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
               At OpnixLabs, we partner with startups, growth SaaS companies, and enterprise organizations to build ultra-fast, secure, and intuitive web applications. We eliminate technical debt and deliver modern cloud architectures designed to scale effortlessly as your business grows.
             </p>
-            <div className="space-y-3">
-              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+
+            <div className="space-y-3 pt-1">
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-cyan-500 dark:text-cyan-400 flex-shrink-0" />
                 <span>End-to-End Product Architecture & UI Design</span>
               </div>
-              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-cyan-500 dark:text-cyan-400 flex-shrink-0" />
                 <span>High-Availability Microservices & Enterprise APIs</span>
               </div>
-              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-cyan-500 dark:text-cyan-400 flex-shrink-0" />
+                <span>Cloud Infrastructure & Multi-Region DevOps Pipelines</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-cyan-500 dark:text-cyan-400 flex-shrink-0" />
                 <span>24/7 Managed System Support & SLA Maintenance</span>
               </div>
+            </div>
+
+            {/* Quick Stat Highlights */}
+            <div className="pt-4 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-4 text-left">
+              <div>
+                <div className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">100+</div>
+                <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Projects Delivered</div>
+              </div>
+              <div>
+                <div className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">99.99%</div>
+                <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Uptime Guarantee</div>
+              </div>
+              <div>
+                <div className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">&lt;100ms</div>
+                <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">API Latency</div>
+              </div>
+            </div>
+
+            <div className="pt-1">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors group"
+              >
+                <span>Schedule a Technical Consultation</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </div>
         </div>
