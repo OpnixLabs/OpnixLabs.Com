@@ -251,7 +251,7 @@ export default function HomePage() {
 
               {/* Floating Experience Badge - Circular */}
               <div className="absolute -bottom-6 -right-4 w-28 h-28 rounded-full bg-slate-900 border-4 border-cyan-500 shadow-2xl flex flex-col items-center justify-center text-center text-white p-2">
-                <span className="text-xl font-black text-cyan-400">10+</span>
+                <span className="text-xl font-black text-cyan-400">5+</span>
                 <span className="text-[10px] font-bold uppercase tracking-widest text-slate-300 leading-tight">Years Of Excellence</span>
               </div>
             </div>

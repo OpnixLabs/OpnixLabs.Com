@@ -27,6 +27,12 @@ export default async function AdminDashboardPage() {
 
         <div className="flex gap-3">
           <Link
+            href="/case-studies"
+            className="px-4 py-2 rounded-md bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center gap-2 transition-colors"
+          >
+            Manage Case Studies
+          </Link>
+          <Link
             href="/create-post"
             className="px-4 py-2 rounded-md bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs flex items-center gap-2 transition-colors"
           >

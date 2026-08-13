@@ -50,7 +50,7 @@ export default function AboutPage() {
           <div className="lg:col-span-6 relative">
             <div className="rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
               <Image
-                src="/images/about.png"
+                src="/images/about.jpg"
                 alt="OpnixLabs Engineering Team"
                 width={600}
                 height={450}

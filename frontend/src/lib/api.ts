@@ -1,3 +1,5 @@
+import { CaseStudyData, caseStudies as fallbackCaseStudies } from '@/data/caseStudies';
+
 export interface Post {
   id: number;
   title: string;
@@ -19,7 +21,7 @@ const getApiBaseUrl = () => {
 const API_BASE_URL = getApiBaseUrl();
 
 /**
- * Fetch all posts from Go backend
+ * Fetch all posts from Go backend with ISR (revalidate: 60s)
  */
 export async function getPosts(options?: RequestInit): Promise<Post[]> {
   try {
@@ -34,13 +36,13 @@ export async function getPosts(options?: RequestInit): Promise<Post[]> {
 
     return await res.json();
   } catch (error) {
-    console.warn('Backend API unavailable, using fallback static data:', error);
+    console.warn('Backend API unavailable, using fallback static data for posts:', error);
     return getFallbackPosts();
   }
 }
 
 /**
- * Fetch single post by slug from Go backend
+ * Fetch single post by slug from Go backend with ISR (revalidate: 60s)
  */
 export async function getPostBySlug(slug: string, options?: RequestInit): Promise<Post | null> {
   try {
@@ -59,7 +61,7 @@ export async function getPostBySlug(slug: string, options?: RequestInit): Promis
 
     return await res.json();
   } catch (error) {
-    console.warn(`Backend API unavailable, using fallback lookup for '${slug}':`, error);
+    console.warn(`Backend API unavailable, using fallback lookup for post '${slug}':`, error);
     const fallback = getFallbackPosts().find((p) => p.slug === slug);
     return fallback || null;
   }
@@ -83,6 +85,100 @@ export async function createPost(payload: CreatePostPayload): Promise<Post> {
   }
 
   return await res.json();
+}
+
+/**
+ * CASE STUDIES API WITH ISR (Revalidation: 60 seconds)
+ */
+export async function getCaseStudies(options?: RequestInit): Promise<CaseStudyData[]> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/case-studies`, {
+      next: { revalidate: 60 },
+      ...options,
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch case studies: ${res.statusText}`);
+    }
+
+    const data: CaseStudyData[] = await res.json();
+    if (data && data.length > 0) {
+      return data;
+    }
+    return fallbackCaseStudies;
+  } catch (error) {
+    console.warn('Backend API unavailable, using fallback static data for case studies:', error);
+    return fallbackCaseStudies;
+  }
+}
+
+export async function getCaseStudyBySlug(slug: string, options?: RequestInit): Promise<CaseStudyData | null> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/case-studies/${slug}`, {
+      next: { revalidate: 60 },
+      ...options,
+    });
+
+    if (res.status === 404) {
+      const fallback = fallbackCaseStudies.find((cs) => cs.slug.toLowerCase() === slug.toLowerCase());
+      return fallback || null;
+    }
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch case study '${slug}': ${res.statusText}`);
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.warn(`Backend API unavailable, using fallback lookup for case study '${slug}':`, error);
+    const fallback = fallbackCaseStudies.find((cs) => cs.slug.toLowerCase() === slug.toLowerCase());
+    return fallback || null;
+  }
+}
+
+export async function createCaseStudy(payload: CaseStudyData): Promise<CaseStudyData> {
+  const res = await fetch(`${API_BASE_URL}/case-studies`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(errText || `Server error ${res.status}`);
+  }
+
+  return await res.json();
+}
+
+export async function updateCaseStudy(id: number, payload: CaseStudyData): Promise<CaseStudyData> {
+  const res = await fetch(`${API_BASE_URL}/case-studies/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(errText || `Server error ${res.status}`);
+  }
+
+  return await res.json();
+}
+
+export async function deleteCaseStudy(id: number): Promise<void> {
+  const res = await fetch(`${API_BASE_URL}/case-studies/${id}`, {
+    method: 'DELETE',
+  });
+
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(errText || `Server error ${res.status}`);
+  }
 }
 
 export interface CreateLeadPayload {
@@ -115,7 +211,6 @@ export async function createLead(payload: CreateLeadPayload): Promise<Lead> {
     created_at: new Date().toISOString(),
   };
 
-  // Always store locally so admin on same origin/client sees it even if backend is offline
   if (typeof window !== 'undefined') {
     try {
       const existing: Lead[] = JSON.parse(localStorage.getItem('opnixlabs_leads') || '[]');
@@ -144,9 +239,6 @@ export async function createLead(payload: CreateLeadPayload): Promise<Lead> {
   return newLead;
 }
 
-/**
- * Fallback posts for graceful initial preview
- */
 function getFallbackPosts(): Post[] {
   return [
     {
@@ -165,18 +257,6 @@ function getFallbackPosts(): Post[] {
         <p>Stay tuned for deeper technical deep-dives into our automated AI blogging workflows!</p>
       `,
       created_at: new Date().toISOString(),
-    },
-    {
-      id: 2,
-      title: 'Autonomous AI Content Generation with Gemini 2.5 & Go Cron Jobs',
-      slug: 'autonomous-ai-content-generation-with-gemini-go-cron-jobs-1700000002',
-      content_html: `
-        <h2>Automating Strategic Tech Insights</h2>
-        <p>In this post, we explore how <code>robfig/cron</code> and the official <code>google.golang.org/genai</code> SDK work together to draft, format, and publish weekly industry analysis automatically.</p>
-        <blockquote>"Automation combined with generative intelligence allows engineering teams to maintain active content feeds effortlessly."</blockquote>
-        <p>Our Go cron engine requests structured JSON directly from Gemini, ensuring semantic HTML layout and immediate persistence into Neon Postgres.</p>
-      `,
-      created_at: new Date(Date.now() - 86400000 * 2).toISOString(),
     },
   ];
 }

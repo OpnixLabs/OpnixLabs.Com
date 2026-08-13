@@ -2,103 +2,133 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Clock, Sparkles } from 'lucide-react';
+
+import { getCaseStudies } from '@/lib/api';
+
+export const revalidate = 60; // ISR Revalidation every 60 seconds
 
 export const metadata: Metadata = {
-  title: 'Client Case Studies & Software Engineering Portfolio',
+  title: 'Our Work | Client Case Studies & Software Engineering Portfolio',
   description:
-    'Explore featured OpnixLabs client case studies in FinTech, multi-cloud data gateways, enterprise SaaS platforms, and digital transformation projects.',
+    'Explore featured OpnixLabs client case studies in FinTech, EdTech, cloud microservices, and digital transformation. Read detailed case studies for Blackboard, ConsumerAffairs, Azlo, and more.',
+  keywords: [
+    'OpnixLabs Work',
+    'OpnixLabs Portfolio',
+    'Blackboard Case Study',
+    'ConsumerAffairs Case Study',
+    'Software Engineering Portfolio',
+  ],
+  alternates: {
+    canonical: 'https://opnixlabs.com/portfolio',
+  },
 };
 
-export default function PortfolioPage() {
-  const projects = [
-    {
-      title: 'Enterprise Wealth Analytics Portal',
-      category: 'FinTech & Banking',
-      description: 'High-performance web dashboard engineered for institutional investors managing $2B+ in assets, handling real-time data streaming and multi-region failovers.',
-      image: '/images/project1.png',
-      tags: ['Next.js 14', 'TypeScript', 'FinTech', 'Real-Time Analytics'],
-    },
-    {
-      title: 'Global Multi-Cloud Data Gateway',
-      category: 'Cloud Systems',
-      description: 'Resilient cloud infrastructure and microservices routing 50M+ daily API transactions across multi-cloud environments for global supply chains.',
-      image: '/images/project2.png',
-      tags: ['Cloud Infrastructure', 'Microservices', 'High-Availability', 'API Gateway'],
-    },
-    {
-      title: 'Omnichannel Enterprise SaaS',
-      category: 'Software Architecture',
-      description: 'Custom SaaS platform providing automated inventory sync, customer analytics, and sub-100ms checkout workflows.',
-      image: '/images/hero.png',
-      tags: ['SaaS Platform', 'TypeScript', 'PostgreSQL', 'High Concurrency'],
-    },
-  ];
+export default async function WorkPortfolioPage() {
+  const caseStudies = await getCaseStudies();
 
   return (
-    <div className="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <div className="py-12 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      {/* Work Hero Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
-          Client Portfolio
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider border border-cyan-500/30">
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>Client Portfolio & Case Studies</span>
         </span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white">
-          Our Featured <span className="gradient-text">Case Studies</span>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Featured Engineering <span className="gradient-text">Work & Case Studies</span>
         </h1>
-        <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
-          Explore how OpnixLabs delivers high-impact software products and cloud architectures for industry leaders.
+        <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+          Discover how OpnixLabs engineers enterprise web platforms, cloud microservices, and high-performance software for industry leaders worldwide.
         </p>
       </div>
 
+      {/* Grid of Work Items */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, i) => (
+        {caseStudies.map((work) => (
           <div
-            key={i}
-            className="glass-panel rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 space-y-5 flex flex-col justify-between group"
+            key={work.slug}
+            className="glass-panel rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg"
           >
             <div>
-              <div className="relative h-56 w-full overflow-hidden">
+              {/* Cover Image & Category Pill */}
+              <div className="relative h-56 w-full overflow-hidden bg-slate-100 dark:bg-slate-950">
                 <Image
-                  src={project.image}
-                  alt={project.title}
+                  src={work.heroImage || '/images/hero.jpg'}
+                  alt={work.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/80 text-cyan-400 text-xs font-bold border border-cyan-500/30">
-                  {project.category}
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/80 text-cyan-400 text-[11px] font-bold border border-cyan-500/30 backdrop-blur-sm">
+                  {work.category}
                 </div>
               </div>
 
-              <div className="p-6 space-y-3">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-500 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
-                  {project.description}
+              {/* Work Details */}
+              <div className="p-6 space-y-4">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                    {work.clientName}
+                  </h3>
+                  <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-950 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800 shrink-0">
+                    <Clock className="w-3 h-3 text-cyan-500" />
+                    {work.engagementLengthValue} {work.engagementLengthUnit}
+                  </span>
+                </div>
+
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3">
+                  {work.summaryText}
                 </p>
 
-                <div className="flex flex-wrap gap-1.5 pt-2">
-                  {project.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-[11px] font-medium border border-slate-200 dark:border-slate-800"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                {/* Tech Stack Pills */}
+                <div className="space-y-1.5 pt-1">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block">
+                    Technologies
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {work.technologies.slice(0, 4).map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 text-[11px] font-medium border border-slate-200 dark:border-slate-800"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
 
+            {/* Check Case Study Action Button */}
             <div className="px-6 pb-6 pt-2">
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:text-cyan-500"
+                href={`/case-studies/${work.slug}`}
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-slate-900 dark:bg-cyan-500 hover:bg-cyan-600 dark:hover:bg-cyan-400 text-white dark:text-slate-950 font-bold text-xs sm:text-sm shadow-md hover:shadow-cyan-500/20 transition-all"
               >
-                Inquire Similar Solution <ArrowRight className="w-3.5 h-3.5" />
+                <span>Check Case Study</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Bottom Consultation CTA */}
+      <div className="glass-panel p-8 sm:p-12 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-center space-y-4">
+        <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+          Looking for a custom software solution for your enterprise?
+        </h3>
+        <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm max-w-xl mx-auto">
+          Contact OpnixLabs cloud architects to discuss your technical requirements and team augmentation goals.
+        </p>
+        <div className="pt-2">
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs sm:text-sm shadow-md transition-all"
+          >
+            Get Free Consultation <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+import { CaseStudyData, caseStudies as fallbackCaseStudies } from '@/data/caseStudies';
+
 export interface Post {
   id: number;
   title: string;
@@ -108,6 +110,63 @@ export async function deletePost(id: number): Promise<void> {
   if (!res.ok) {
     const errText = await res.text().catch(() => '');
     throw new Error(errText || `Failed to delete post #${id}`);
+  }
+}
+
+/**
+ * Case Studies CRUD for Admin
+ */
+export async function getCaseStudies(): Promise<CaseStudyData[]> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/case-studies`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`Failed to fetch case studies: ${res.statusText}`);
+    const data: CaseStudyData[] = await res.json();
+    if (data && data.length > 0) return data;
+    return fallbackCaseStudies;
+  } catch (error) {
+    console.warn('Backend API unavailable, using fallback case studies:', error);
+    return fallbackCaseStudies;
+  }
+}
+
+export async function createCaseStudy(payload: CaseStudyData): Promise<CaseStudyData> {
+  const res = await fetch(`${API_BASE_URL}/case-studies`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error(errText || `Server error ${res.status}`);
+  }
+
+  return await res.json();
+}
+
+export async function updateCaseStudy(id: number, payload: CaseStudyData): Promise<CaseStudyData> {
+  const res = await fetch(`${API_BASE_URL}/case-studies/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error(errText || `Failed to update case study #${id}`);
+  }
+
+  return await res.json();
+}
+
+export async function deleteCaseStudy(id: number): Promise<void> {
+  const res = await fetch(`${API_BASE_URL}/case-studies/${id}`, {
+    method: 'DELETE',
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error(errText || `Failed to delete case study #${id}`);
   }
 }
 

@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getPosts } from '@/lib/api';
+import { getAllCaseStudySlugs } from '@/data/caseStudies';
+import { popularTechnologies } from '@/data/technologies';
 
 export const revalidate = 3600;
 
@@ -11,6 +13,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '',
     '/services',
     '/portfolio',
+    '/technologies',
+    '/case-studies',
+    '/case-studies/blackboard',
     '/about',
     '/blog',
     '/contact',
@@ -18,7 +23,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: (route === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
-    priority: route === '' ? 1.0 : 0.8,
+    priority: route === '' || route.startsWith('/case-studies') || route === '/technologies' ? 0.9 : 0.8,
+  }));
+
+  // Dynamic Case Studies routes
+  const caseStudySlugs = getAllCaseStudySlugs();
+  const caseStudyRoutes = caseStudySlugs.map((slug) => ({
+    url: `${baseUrl}/case-studies/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  }));
+
+  // Dynamic Technology Landing Page routes for SEO
+  const techRoutes = popularTechnologies.map((t) => ({
+    url: `${baseUrl}/technologies/${t.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
   }));
 
   // Fetch dynamic blog posts
@@ -30,9 +52,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     }));
-    return [...routes, ...blogRoutes];
+    return [...routes, ...caseStudyRoutes, ...techRoutes, ...blogRoutes];
   } catch (error) {
     console.warn('Failed to fetch blog posts for sitemap generation:', error);
-    return routes;
+    return [...routes, ...caseStudyRoutes, ...techRoutes];
   }
 }

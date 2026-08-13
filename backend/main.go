@@ -57,6 +57,7 @@ func main() {
 	if database != nil {
 		postHandler := handlers.NewPostHandler(database)
 		leadHandler := handlers.NewLeadHandler(database)
+		caseStudyHandler := handlers.NewCaseStudyHandler(database)
 
 		registerPostRoutes := func(r chi.Router) {
 			r.Get("/", postHandler.GetPosts)
@@ -68,6 +69,16 @@ func main() {
 		}
 		r.Route("/api/posts", registerPostRoutes)
 		r.Route("/posts", registerPostRoutes)
+
+		registerCaseStudyRoutes := func(r chi.Router) {
+			r.Get("/", caseStudyHandler.GetCaseStudies)
+			r.Post("/", caseStudyHandler.CreateCaseStudy)
+			r.Get("/{slug}", caseStudyHandler.GetCaseStudyBySlug)
+			r.Put("/{id}", caseStudyHandler.UpdateCaseStudy)
+			r.Delete("/{id}", caseStudyHandler.DeleteCaseStudy)
+		}
+		r.Route("/api/case-studies", registerCaseStudyRoutes)
+		r.Route("/case-studies", registerCaseStudyRoutes)
 
 		registerLeadRoutes := func(r chi.Router) {
 			r.Get("/", leadHandler.GetLeads)
