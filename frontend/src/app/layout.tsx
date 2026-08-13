@@ -152,6 +152,10 @@ export default function RootLayout({
     <html lang="en" className={`dark ${plusJakarta.variable} ${inter.variable}`}>
       <head>
         <link rel="icon" href="/favIcon.ico" sizes="any" />
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

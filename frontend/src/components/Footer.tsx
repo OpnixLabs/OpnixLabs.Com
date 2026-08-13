@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Enterprise Solutions */}
           <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Enterprise Services</h4>
+            <p className="text-white font-bold text-xs uppercase tracking-wider mb-4">Enterprise Services</p>
             <ul className="space-y-3 text-xs sm:text-sm">
               <li>
                 <Link href="/services" className="hover:text-cyan-400 transition-colors">
@@ -90,7 +90,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Company</h4>
+            <p className="text-white font-bold text-xs uppercase tracking-wider mb-4">Company</p>
             <ul className="space-y-3 text-xs sm:text-sm">
               <li>
                 <Link href="/about" className="hover:text-cyan-400 transition-colors">
@@ -117,7 +117,7 @@ export default function Footer() {
 
           {/* Contact Information */}
           <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Location & Contact</h4>
+            <p className="text-white font-bold text-xs uppercase tracking-wider mb-4">Location & Contact</p>
             <div className="space-y-3 text-xs sm:text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />

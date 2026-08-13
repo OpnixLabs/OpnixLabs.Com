@@ -1,16 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-        pathname: "/**",
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**',
       },
       {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        pathname: "/**",
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
       },
     ],
   },
