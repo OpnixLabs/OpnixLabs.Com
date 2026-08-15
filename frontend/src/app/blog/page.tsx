@@ -27,7 +27,7 @@ export default async function BlogListPage() {
     <div className="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
-        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
+        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
           Software & Technology Insights
         </span>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Tech <span className="gradient-text">Insights</span></h1>
@@ -79,7 +79,7 @@ export default async function BlogListPage() {
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-slate-950/80 text-cyan-400 border border-cyan-500/30 backdrop-blur-sm">
+                  <div className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-slate-950/80 text-blue-400 border border-blue-500/30 backdrop-blur-sm">
                     Technical Analysis
                   </div>
                 </div>
@@ -87,12 +87,12 @@ export default async function BlogListPage() {
                 <div className="p-6 space-y-3 flex-grow flex flex-col justify-between">
                   <div className="space-y-3">
                     <span className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 font-mono">
-                      <Calendar className="w-3.5 h-3.5 text-cyan-500" />
+                      <Calendar className="w-3.5 h-3.5 text-blue-500" />
                       {dateFormatted}
                     </span>
 
                     <Link href={`/blog/${post.slug}`} className="block">
-                      <h2 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors line-clamp-2">
+                      <h2 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
                         {post.title}
                       </h2>
                     </Link>
@@ -105,7 +105,7 @@ export default async function BlogListPage() {
                   <div className="pt-3 border-t border-slate-200 dark:border-slate-800/80 mt-4">
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-500"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-500"
                     >
                       Read Article <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </Link>

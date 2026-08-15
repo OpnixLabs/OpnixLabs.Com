@@ -60,13 +60,13 @@ html.light .glass-panel-hover:hover {
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 .glass-panel-hover:hover {
-  border-color: rgba(0, 210, 255, 0.4);
+  border-color: rgba(59, 130, 246, 0.4);
   background: rgba(15, 23, 42, 0.85);
 }
 
-/* Logo-Matched Electric Cyan Gradient Text */
+/* Electric Blue Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #00d2ff 0%, #38bdf8 50%, #0284c7 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -121,7 +121,7 @@ html.light .prose h1, html.light .prose h2, html.light .prose h3, html.light .pr
 }
 
 .prose blockquote {
-  border-left: 4px solid #00d2ff;
+  border-left: 4px solid #3b82f6;
   padding-left: 1em;
   font-style: italic;
   margin-top: 1.5em;
@@ -142,10 +142,10 @@ html.light .prose blockquote {
 }
 
 .prose a {
-  color: #00d2ff;
+  color: #3b82f6;
   text-decoration: underline;
 }
 
 .prose a:hover {
-  color: #38bdf8;
+  color: #60a5fa;
 }

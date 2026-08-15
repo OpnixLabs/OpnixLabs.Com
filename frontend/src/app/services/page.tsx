@@ -71,7 +71,7 @@ export default function ServicesPage() {
     <div className="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
       {/* Hero Header matching BairesDev Screenshot 3 */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-extrabold uppercase tracking-wider border border-cyan-500/30">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-extrabold uppercase tracking-wider border border-blue-500/30">
           <Sparkles className="w-3.5 h-3.5" /> END-TO-END TECH SOLUTIONS
         </span>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -88,7 +88,7 @@ export default function ServicesPage() {
           <div key={idx} className="space-y-6">
             <div className="border-b border-slate-200 dark:border-slate-800 pb-3 space-y-1">
               <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
-                <span className="text-cyan-500">0{idx + 1}.</span> {cat.title}
+                <span className="text-blue-500">0{idx + 1}.</span> {cat.title}
               </h2>
               <p className="text-xs sm:text-sm text-slate-500 font-medium">{cat.description}</p>
             </div>
@@ -98,10 +98,10 @@ export default function ServicesPage() {
                 <Link
                   key={i}
                   href={item.href}
-                  className="glass-panel p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 hover:border-cyan-500/50 hover:shadow-md transition-all space-y-3 group flex flex-col justify-between"
+                  className="glass-panel p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 hover:border-blue-500/50 hover:shadow-md transition-all space-y-3 group flex flex-col justify-between"
                 >
                   <div className="space-y-2">
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-cyan-500 transition-colors">
+                    <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-500 transition-colors">
                       {item.name}
                     </h3>
                     <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -110,7 +110,7 @@ export default function ServicesPage() {
                   </div>
 
                   <div className="pt-2">
-                    <span className="text-xs font-bold text-cyan-600 dark:text-cyan-400 inline-flex items-center gap-1 group-hover:underline">
+                    <span className="text-xs font-bold text-blue-600 dark:text-blue-400 inline-flex items-center gap-1 group-hover:underline">
                       Learn More <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
         <div>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold text-sm transition-all shadow-md"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-sm transition-all shadow-md"
           >
             <span>Get Free Consultation</span>
             <ArrowRight className="w-4 h-4" />

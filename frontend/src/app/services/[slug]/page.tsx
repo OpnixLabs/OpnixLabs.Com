@@ -150,7 +150,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   };
 
   return (
-    <article className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors selection:bg-cyan-500 selection:text-slate-950">
+    <article className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors selection:bg-blue-500 selection:text-slate-950">
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
@@ -173,21 +173,21 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-16">
           {/* Breadcrumbs */}
           <nav className="flex items-center gap-2 text-xs font-semibold text-slate-300 pb-4">
-            <Link href="/" className="hover:text-cyan-400 transition-colors">
+            <Link href="/" className="hover:text-blue-400 transition-colors">
               Home
             </Link>
             <span>/</span>
-            <Link href="/services" className="hover:text-cyan-400 transition-colors">
+            <Link href="/services" className="hover:text-blue-400 transition-colors">
               Services
             </Link>
             <span>/</span>
-            <span className="text-cyan-400">{service.title}</span>
+            <span className="text-blue-400">{service.title}</span>
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 text-xs font-extrabold uppercase tracking-wider border border-cyan-500/30">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-extrabold uppercase tracking-wider border border-blue-500/30">
                 <Sparkles className="w-3.5 h-3.5" /> ENTERPRISE SOFTWARE SERVICES
               </span>
 
@@ -209,7 +209,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               <div className="space-y-3 pt-2">
                 {service.keyBenefits.slice(0, 3).map((benefit, i) => (
                   <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                     <span>{benefit}</span>
                   </div>
                 ))}
@@ -218,15 +218,15 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {/* Trust Badges */}
               <div className="pt-4 flex flex-wrap items-center gap-6 text-xs text-slate-400 border-t border-slate-800/80">
                 <div className="flex items-center gap-2">
-                  <Award className="w-4 h-4 text-cyan-400" />
+                  <Award className="w-4 h-4 text-blue-400" />
                   <span>Clutch 4.9/5 Rating</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-cyan-400" />
+                  <Clock className="w-4 h-4 text-blue-400" />
                   <span>Sub-24h Team Assembly</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-cyan-400" />
+                  <ShieldCheck className="w-4 h-4 text-blue-400" />
                   <span>SOC2 & ISO Compliant</span>
                 </div>
               </div>
@@ -249,28 +249,28 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <nav className="sticky top-16 z-30 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-3 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-xs font-bold text-slate-600 dark:text-slate-400">
           <div className="flex items-center gap-6">
-            <a href="#overview" className="hover:text-cyan-500 transition-colors">
+            <a href="#overview" className="hover:text-blue-500 transition-colors">
               Overview
             </a>
-            <a href="#capabilities" className="hover:text-cyan-500 transition-colors">
+            <a href="#capabilities" className="hover:text-blue-500 transition-colors">
               Capabilities
             </a>
-            <a href="#case-studies" className="hover:text-cyan-500 transition-colors">
+            <a href="#case-studies" className="hover:text-blue-500 transition-colors">
               Case Studies
             </a>
-            <a href="#tech-stack" className="hover:text-cyan-500 transition-colors">
+            <a href="#tech-stack" className="hover:text-blue-500 transition-colors">
               Tech Stack
             </a>
-            <a href="#engagement-models" className="hover:text-cyan-500 transition-colors">
+            <a href="#engagement-models" className="hover:text-blue-500 transition-colors">
               Engagement Models
             </a>
-            <a href="#faqs" className="hover:text-cyan-500 transition-colors">
+            <a href="#faqs" className="hover:text-blue-500 transition-colors">
               FAQs
             </a>
           </div>
           <a
             href="#schedule"
-            className="px-4 py-2 rounded-md bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold transition-all shadow-sm"
+            className="px-4 py-2 rounded-md bg-blue-500 hover:bg-blue-400 text-slate-950 font-bold transition-all shadow-sm"
           >
             Schedule a Call
           </a>
@@ -282,7 +282,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-4">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
+              <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400">
                 WHY HIRE OPNIXLABS
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
@@ -299,7 +299,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   key={idx}
                   className="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
                   <span className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 leading-relaxed">
                     {benefit}
                   </span>
@@ -310,14 +310,14 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
           {/* Testimonial Banner */}
           <div className="glass-panel p-8 sm:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6">
-            <div className="p-4 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 shrink-0">
+            <div className="p-4 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 shrink-0">
               <Quote className="w-8 h-8" />
             </div>
             <div className="space-y-2">
               <p className="text-sm sm:text-base italic text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
                 &ldquo;{service.testimonial.quote}&rdquo;
               </p>
-              <div className="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
+              <div className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
                 — {service.testimonial.author}, <span className="text-slate-500">{service.testimonial.role} ({service.testimonial.company})</span>
               </div>
             </div>
@@ -329,7 +329,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <section id="case-studies" className="py-10 sm:py-16 bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400">
               PROVEN RESULTS
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
@@ -352,17 +352,17 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     quality={85}
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-cyan-500 text-slate-950 text-[10px] font-extrabold shadow-md">
+                  <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-blue-500 text-slate-950 text-[10px] font-extrabold shadow-md">
                     {cs.metrics}
                   </div>
                 </div>
 
                 <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
                   <div className="space-y-2">
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-blue-600 dark:text-blue-400">
                       {cs.category}
                     </span>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-cyan-500 transition-colors">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-500 transition-colors">
                       {cs.title}
                     </h3>
                     <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -373,7 +373,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <div className="pt-4">
                     <Link
                       href={`/case-studies/${cs.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline"
                     >
                       Read Case Study <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
@@ -389,7 +389,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <section id="capabilities" className="py-16 sm:py-24 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400">
               SERVICE SCOPE
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">

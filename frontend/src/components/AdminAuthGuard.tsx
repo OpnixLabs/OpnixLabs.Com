@@ -76,10 +76,10 @@ export default function AdminAuthGuard({ children }: { children: React.ReactNode
   if (!isAuthenticated) {
     return (
       <AdminAuthContext.Provider value={{ isAuthenticated, login, logout }}>
-        <div className="py-16 px-4 flex items-center justify-center selection:bg-cyan-500 selection:text-slate-950">
+        <div className="py-16 px-4 flex items-center justify-center selection:bg-blue-500 selection:text-slate-950">
           <div className="w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 space-y-6">
             <div className="text-center space-y-2">
-              <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mx-auto text-cyan-400 shadow-inner">
+              <div className="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center mx-auto text-blue-400 shadow-inner">
                 <ShieldCheck className="w-7 h-7" />
               </div>
               <div className="flex items-center justify-center gap-2 pt-1">
@@ -119,7 +119,7 @@ export default function AdminAuthGuard({ children }: { children: React.ReactNode
                     value={usernameInput}
                     onChange={(e) => setUsernameInput(e.target.value)}
                     placeholder="Enter admin username"
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:outline-none focus:border-cyan-500"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:outline-none focus:border-blue-500"
                   />
                 </div>
               </div>
@@ -136,7 +136,7 @@ export default function AdminAuthGuard({ children }: { children: React.ReactNode
                     value={passwordInput}
                     onChange={(e) => setPasswordInput(e.target.value)}
                     placeholder="Enter admin password"
-                    className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:outline-none focus:border-cyan-500"
+                    className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:outline-none focus:border-blue-500"
                   />
                   <button
                     type="button"
@@ -150,7 +150,7 @@ export default function AdminAuthGuard({ children }: { children: React.ReactNode
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs shadow-lg shadow-cyan-500/20 transition-all flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-500/20 transition-all flex items-center justify-center gap-2"
               >
                 <Lock className="w-4 h-4" />
                 <span>Unlock Publisher Console</span>

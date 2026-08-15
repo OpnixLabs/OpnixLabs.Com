@@ -93,7 +93,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
       <div>
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white text-xs font-medium transition-all"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500/40 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white text-xs font-medium transition-all"
         >
           <ArrowLeft className="w-3.5 h-3.5" /> Back to Blog
         </Link>
@@ -103,7 +103,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
       <header className="space-y-4 text-center border-b border-slate-200 dark:border-slate-800 pb-8">
         <div className="flex items-center justify-center gap-3">
           <span
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30"
           >
             Technical Insight
           </span>
@@ -142,7 +142,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
         <p>Published by OpnixLabs</p>
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1 text-cyan-600 dark:text-cyan-400 hover:underline font-semibold"
+          className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline font-semibold"
         >
           Explore More Tech Insights →
         </Link>

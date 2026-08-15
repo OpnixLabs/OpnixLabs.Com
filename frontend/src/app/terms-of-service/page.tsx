@@ -18,7 +18,7 @@ export default function TermsOfServicePage() {
       <nav aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
           <li>
-            <Link href="/" className="inline-flex items-center gap-1 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+            <Link href="/" className="inline-flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               <Home className="w-3.5 h-3.5" />
               <span>Home</span>
             </Link>
@@ -32,14 +32,14 @@ export default function TermsOfServicePage() {
 
       {/* Header */}
       <div className="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider border border-cyan-500/20">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-500/20">
           <Scale className="w-3.5 h-3.5" /> Legal Agreement
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
           Terms of <span className="gradient-text">Service</span>
         </h1>
         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 flex items-center gap-2">
-          <Clock className="w-4 h-4 text-cyan-500" />
+          <Clock className="w-4 h-4 text-blue-500" />
           <span>Last Updated: {lastUpdated}</span>
         </p>
       </div>
@@ -50,11 +50,11 @@ export default function TermsOfServicePage() {
         {/* Section 1 */}
         <section className="glass-panel p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <span className="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-sm font-black">1</span>
+            <span className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black">1</span>
             Acceptance of Terms
           </h2>
           <p>
-            By accessing our website (<Link href="/" className="text-cyan-600 dark:text-cyan-400 underline">opnixlabs.com</Link>), engaging OpnixLabs Inc. (“OpnixLabs”, “Company”, “We”, “Us”) for custom software development, cloud infrastructure design, backend microservices, or system maintenance, you (“Client”, “User”) agree to be bound by these Terms of Service.
+            By accessing our website (<Link href="/" className="text-blue-600 dark:text-blue-400 underline">opnixlabs.com</Link>), engaging OpnixLabs Inc. (“OpnixLabs”, “Company”, “We”, “Us”) for custom software development, cloud infrastructure design, backend microservices, or system maintenance, you (“Client”, “User”) agree to be bound by these Terms of Service.
           </p>
           <p>
             If you are executing an Master Services Agreement (MSA) or Statement of Work (SOW) on behalf of an enterprise entity, you represent that you possess legal authority to bind that entity.
@@ -64,7 +64,7 @@ export default function TermsOfServicePage() {
         {/* Section 2 */}
         <section className="glass-panel p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <span className="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-sm font-black">2</span>
+            <span className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black">2</span>
             Services & Project Scope
           </h2>
           <p>
@@ -80,7 +80,7 @@ export default function TermsOfServicePage() {
         {/* Section 3 */}
         <section className="glass-panel p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <span className="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-sm font-black">3</span>
+            <span className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black">3</span>
             Intellectual Property & Code Ownership
           </h2>
           <p>
@@ -95,7 +95,7 @@ export default function TermsOfServicePage() {
         {/* Section 4 */}
         <section className="glass-panel p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <span className="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-sm font-black">4</span>
+            <span className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black">4</span>
             Payment Terms & Invoicing
           </h2>
           <p>
@@ -111,7 +111,7 @@ export default function TermsOfServicePage() {
         {/* Section 5 */}
         <section className="glass-panel p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <span className="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-sm font-black">5</span>
+            <span className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black">5</span>
             Confidentiality & Non-Disclosure
           </h2>
           <p>
@@ -122,7 +122,7 @@ export default function TermsOfServicePage() {
         {/* Section 6 */}
         <section className="glass-panel p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <span className="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-sm font-black">6</span>
+            <span className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black">6</span>
             Limitation of Liability & Governing Law
           </h2>
           <p>
@@ -134,12 +134,12 @@ export default function TermsOfServicePage() {
         </section>
 
         {/* Contact Legal Banner */}
-        <div className="p-8 rounded-xl border border-cyan-500/40 text-center space-y-4 bg-slate-900 text-white shadow-2xl">
+        <div className="p-8 rounded-xl border border-blue-500/40 text-center space-y-4 bg-slate-900 text-white shadow-2xl">
           <h3 className="text-xl font-bold text-white">Questions Regarding Legal Terms?</h3>
           <p className="text-xs sm:text-sm text-slate-300">
             Reach out to our legal and compliance department for clarifications on enterprise agreements or custom MSAs.
           </p>
-          <div className="flex flex-wrap justify-center gap-6 text-xs text-cyan-400 font-semibold pt-2">
+          <div className="flex flex-wrap justify-center gap-6 text-xs text-blue-400 font-semibold pt-2">
             <a href="mailto:contact@opnixlabs.com" className="flex items-center gap-2 hover:underline">
               <Mail className="w-4 h-4" /> contact@opnixlabs.com
             </a>

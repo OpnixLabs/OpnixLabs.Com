@@ -138,7 +138,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
   };
 
   return (
-    <article className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-cyan-500 selection:text-slate-950 font-sans transition-colors">
+    <article className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-blue-500 selection:text-slate-950 font-sans transition-colors">
       {/* JSON-LD for Search Engines */}
       <script
         type="application/ld+json"
@@ -161,7 +161,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-16 space-y-8">
           {/* Eyebrow Breadcrumb Tag */}
-          <div className="text-xs font-extrabold uppercase tracking-widest text-cyan-400">
+          <div className="text-xs font-extrabold uppercase tracking-widest text-blue-400">
             {caseStudy.heroCategoryText}
           </div>
 
@@ -193,7 +193,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
             <div className="lg:col-span-7 space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
                 {caseStudy.summaryTitle}
-                <span className="text-cyan-500 dark:text-cyan-400">.</span>
+                <span className="text-blue-500 dark:text-blue-400">.</span>
               </h2>
               <p className="text-slate-700 dark:text-slate-300 text-base sm:text-xl font-normal leading-relaxed">
                 {caseStudy.summaryText}
@@ -212,11 +212,11 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
 
           {/* Engagement Length Metric Circle */}
           <div className="flex flex-col items-center justify-center pt-4">
-            <div className="w-36 h-36 rounded-full border-2 border-dashed border-cyan-500 dark:border-cyan-400/60 p-2 flex flex-col items-center justify-center text-center bg-white dark:bg-slate-900/50 text-slate-900 dark:text-white shadow-lg">
+            <div className="w-36 h-36 rounded-full border-2 border-dashed border-blue-500 dark:border-blue-400/60 p-2 flex flex-col items-center justify-center text-center bg-white dark:bg-slate-900/50 text-slate-900 dark:text-white shadow-lg">
               <span className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono leading-none">
                 {caseStudy.engagementLengthValue}
               </span>
-              <span className="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mt-1">
+              <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mt-1">
                 {caseStudy.engagementLengthUnit}
               </span>
             </div>
@@ -247,7 +247,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
                 Engagement type
               </span>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-cyan-50 dark:bg-cyan-950/80 text-cyan-700 dark:text-cyan-400 font-semibold border border-cyan-200 dark:border-cyan-500/30">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/80 text-blue-700 dark:text-blue-400 font-semibold border border-blue-200 dark:border-blue-500/30">
                 {caseStudy.engagementType}
               </span>
             </div>
@@ -260,14 +260,14 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
         <section className="py-12 bg-slate-100 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="glass-panel p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-md flex flex-col md:flex-row items-center gap-6">
-              <div className="p-4 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 shrink-0">
+              <div className="p-4 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 shrink-0">
                 <Quote className="w-8 h-8" />
               </div>
               <div className="space-y-2">
                 <p className="text-sm sm:text-base italic text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
                   &ldquo;{caseStudy.quoteBanner?.quote || caseStudy.quoteText}&rdquo;
                 </p>
-                <div className="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
+                <div className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
                   — {caseStudy.quoteBanner?.author || caseStudy.quoteAuthor}
                 </div>
               </div>
@@ -297,7 +297,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
       {/* 4. THE CHALLENGE SECTION WITH CONNECTING PIPE */}
       <section className="py-16 sm:py-24 bg-slate-50 dark:bg-slate-950 relative overflow-hidden">
         {/* Connecting SVG Pipe Graphic */}
-        <div className="hidden lg:block absolute left-8 top-0 bottom-0 w-1 bg-cyan-500/30" />
+        <div className="hidden lg:block absolute left-8 top-0 bottom-0 w-1 bg-blue-500/30" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -305,7 +305,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
             <div className="lg:col-span-7 space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
                 {caseStudy.challengeTitle}
-                <span className="text-cyan-500 dark:text-cyan-400">.</span>
+                <span className="text-blue-500 dark:text-blue-400">.</span>
               </h2>
 
               <div className="space-y-4 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -317,7 +317,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
 
             {/* Right Callout Quote */}
             <div className="lg:col-span-5 flex items-center h-full">
-              <blockquote className="text-xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 leading-snug tracking-tight border-l-4 border-cyan-500 dark:border-cyan-400 pl-6 py-2 italic">
+              <blockquote className="text-xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 leading-snug tracking-tight border-l-4 border-blue-500 dark:border-blue-400 pl-6 py-2 italic">
                 &ldquo;{caseStudy.challengeCalloutQuote}&rdquo;
               </blockquote>
             </div>
@@ -326,7 +326,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
       </section>
 
       {/* 5. THE SOLUTION SECTION (PERMANENTLY WHITE TEXT & BADGES FOR ALL THEMES) */}
-      <section className="py-20 sm:py-28 bg-gradient-to-br from-cyan-600 via-cyan-700 to-cyan-800 !text-white relative shadow-2xl">
+      <section className="py-20 sm:py-28 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 !text-white relative shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <h2
@@ -362,7 +362,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
                 <span
                   key={idx}
                   style={{ color: '#ffffff' }}
-                  className="px-6 py-3 rounded-full border-2 border-white bg-white/10 !text-white font-extrabold text-sm sm:text-base hover:bg-white hover:!text-cyan-900 transition-all duration-300 shadow-md backdrop-blur-sm cursor-default"
+                  className="px-6 py-3 rounded-full border-2 border-white bg-white/10 !text-white font-extrabold text-sm sm:text-base hover:bg-white hover:!text-blue-900 transition-all duration-300 shadow-md backdrop-blur-sm cursor-default"
                 >
                   {tech}
                 </span>
@@ -391,7 +391,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               <div className="space-y-4">
                 <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white">
                   {caseStudy.outcomeTitle}
-                  <span className="text-cyan-500 dark:text-cyan-400">.</span>
+                  <span className="text-blue-500 dark:text-blue-400">.</span>
                 </h2>
                 <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-semibold">
                   {caseStudy.outcomeSubtitle}

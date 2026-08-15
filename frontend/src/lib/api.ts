@@ -220,6 +220,19 @@ export async function createLead(payload: CreateLeadPayload): Promise<Lead> {
     }
   }
 
+  // Trigger Resend email delivery (auto-reply to user & notification to admin)
+  try {
+    await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+  } catch (emailErr) {
+    console.warn('Contact email dispatch warning:', emailErr);
+  }
+
   try {
     const res = await fetch(`${API_BASE_URL}/leads`, {
       method: 'POST',

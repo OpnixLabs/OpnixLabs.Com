@@ -24,9 +24,9 @@ const cultureValues = [
   {
     title: 'Remote-First Freedom',
     subtitle: 'Top 1% global talent working without borders',
-    icon: <Wifi className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
-    gradient: 'from-cyan-500/10 via-sky-500/5 to-transparent',
-    borderColor: 'hover:border-cyan-500/50',
+    icon: <Wifi className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
+    gradient: 'from-blue-500/10 via-sky-500/5 to-transparent',
+    borderColor: 'hover:border-blue-500/50',
   },
   {
     title: 'Teamwork & Ownership',
@@ -48,13 +48,13 @@ export default function AboutCultureBadges() {
   return (
     <section className="py-16 md:py-28 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden">
       {/* Glow effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider border border-cyan-500/20">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-500/20">
             <Sparkles className="w-3.5 h-3.5" /> The OpnixLabs Way
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -100,12 +100,12 @@ export default function AboutCultureBadges() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-slate-900 p-8 sm:p-14 rounded-3xl border border-cyan-500/40 text-center max-w-4xl mx-auto space-y-6 relative overflow-hidden shadow-2xl"
+          className="bg-slate-900 p-8 sm:p-14 rounded-3xl border border-blue-500/40 text-center max-w-4xl mx-auto space-y-6 relative overflow-hidden shadow-2xl"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
           
           <div className="relative z-10 space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-bold uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 text-xs font-bold uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" /> Ready to Build?
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -119,7 +119,7 @@ export default function AboutCultureBadges() {
           <div className="relative z-10 pt-2">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-extrabold text-sm sm:text-base transition-all shadow-[0_0_25px_rgba(34,211,238,0.4)] hover:shadow-[0_0_35px_rgba(34,211,238,0.6)] group"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-sm sm:text-base transition-all shadow-lg shadow-blue-500/30 group"
             >
               <span>Schedule Technical Consultation</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

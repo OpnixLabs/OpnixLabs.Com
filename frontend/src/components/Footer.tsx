@@ -61,27 +61,27 @@ export default function Footer() {
             <p className="text-white font-bold text-xs uppercase tracking-wider mb-4">Enterprise Services</p>
             <ul className="space-y-3 text-xs sm:text-sm">
               <li>
-                <Link href="/services" className="hover:text-cyan-400 transition-colors">
+                <Link href="/services" className="hover:text-blue-400 transition-colors">
                   Custom Web Development
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-cyan-400 transition-colors">
+                <Link href="/services" className="hover:text-blue-400 transition-colors">
                   Enterprise Backend Infrastructure
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-cyan-400 transition-colors">
+                <Link href="/services" className="hover:text-blue-400 transition-colors">
                   Cloud Systems & DevOps
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-cyan-400 transition-colors">
+                <Link href="/services" className="hover:text-blue-400 transition-colors">
                   Cybersecurity & Compliance
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-cyan-400 transition-colors">
+                <Link href="/services" className="hover:text-blue-400 transition-colors">
                   Digital Transformation
                 </Link>
               </li>
@@ -93,22 +93,22 @@ export default function Footer() {
             <p className="text-white font-bold text-xs uppercase tracking-wider mb-4">Company</p>
             <ul className="space-y-3 text-xs sm:text-sm">
               <li>
-                <Link href="/about" className="hover:text-cyan-400 transition-colors">
+                <Link href="/about" className="hover:text-blue-400 transition-colors">
                   About Our Company
                 </Link>
               </li>
               <li>
-                <Link href="/case-studies" className="hover:text-cyan-400 transition-colors">
+                <Link href="/case-studies" className="hover:text-blue-400 transition-colors">
                   Case Studies & Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-cyan-400 transition-colors">
+                <Link href="/blog" className="hover:text-blue-400 transition-colors">
                   Technical Insights Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-cyan-400 transition-colors">
+                <Link href="/contact" className="hover:text-blue-400 transition-colors">
                   Schedule Technical Consultation
                 </Link>
               </li>
@@ -120,34 +120,34 @@ export default function Footer() {
             <p className="text-white font-bold text-xs uppercase tracking-wider mb-4">Location & Contact</p>
             <div className="space-y-3 text-xs sm:text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
                 <a
                   href="https://maps.google.com/?q=Uttar+Pradesh,+India"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-blue-400 transition-colors"
                 >
                   Uttar Pradesh, India
                 </a>
               </div>
               <div className="flex items-start gap-2.5">
-                <Clock className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
                 <span>9:00 AM - 9:00 PM IST (Mon - Sun)</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 <a
                   href="mailto:contact@opnixlabs.com"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-blue-400 transition-colors"
                 >
                   contact@opnixlabs.com
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 <a
                   href="tel:+918882659469"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-blue-400 transition-colors"
                 >
                   +91 88826-59469
                 </a>
@@ -159,16 +159,16 @@ export default function Footer() {
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
           <p>© {new Date().getFullYear()} OpnixLabs Inc. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 sm:gap-6">
-            <Link href="/privacy-policy" className="hover:text-cyan-400 transition-colors">
+            <Link href="/privacy-policy" className="hover:text-blue-400 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="hover:text-cyan-400 transition-colors">
+            <Link href="/terms-of-service" className="hover:text-blue-400 transition-colors">
               Terms of Service
             </Link>
-            <Link href="/refund-policy" className="hover:text-cyan-400 transition-colors">
+            <Link href="/refund-policy" className="hover:text-blue-400 transition-colors">
               Refund Policy
             </Link>
-            <Link href="/security-sla" className="hover:text-cyan-400 transition-colors">
+            <Link href="/security-sla" className="hover:text-blue-400 transition-colors">
               Security SLA
             </Link>
           </div>

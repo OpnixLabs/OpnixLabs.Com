@@ -73,7 +73,7 @@ export default function AboutPressAccordion() {
           
           {/* Left Column: Heading */}
           <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-28">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider border border-cyan-500/20">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-500/20">
               <Newspaper className="w-3.5 h-3.5" /> Technical Standards
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -86,7 +86,7 @@ export default function AboutPressAccordion() {
             <div className="pt-2">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 dark:bg-slate-800 text-cyan-400 font-bold text-xs hover:bg-slate-800 transition-colors border border-slate-700/80 shadow-md"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 dark:bg-slate-800 text-blue-400 font-bold text-xs hover:bg-slate-800 transition-colors border border-slate-700/80 shadow-md"
               >
                 <BookOpen className="w-4 h-4" />
                 <span>Explore Technical Insights Blog</span>
@@ -106,12 +106,12 @@ export default function AboutPressAccordion() {
                   <button
                     onClick={() => toggleItem(item.id)}
                     className={`w-full p-6 text-left flex items-center justify-between gap-4 transition-colors ${
-                      isOpen ? 'bg-cyan-500/5 dark:bg-cyan-500/10' : 'hover:bg-slate-50 dark:hover:bg-slate-800/40'
+                      isOpen ? 'bg-blue-500/5 dark:bg-blue-500/10' : 'hover:bg-slate-50 dark:hover:bg-slate-800/40'
                     }`}
                     aria-expanded={isOpen}
                   >
                     <div className="space-y-1">
-                      <span className="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
+                      <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
                         {item.category} • <span className="text-slate-500 dark:text-slate-400 font-medium">{item.tag}</span>
                       </span>
                       <h3 className="text-base sm:text-xl font-bold text-slate-900 dark:text-white">
@@ -119,9 +119,9 @@ export default function AboutPressAccordion() {
                       </h3>
                     </div>
 
-                    <div className={`p-2 rounded-lg border text-cyan-600 dark:text-cyan-400 transition-all duration-300 ${
+                    <div className={`p-2 rounded-lg border text-blue-600 dark:text-blue-400 transition-all duration-300 ${
                       isOpen 
-                        ? 'rotate-180 bg-cyan-500/20 border-cyan-500/30' 
+                        ? 'rotate-180 bg-blue-500/20 border-blue-500/30' 
                         : 'bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700'
                     }`}>
                       <ChevronDown className="w-5 h-5" />
@@ -141,7 +141,7 @@ export default function AboutPressAccordion() {
                           <div>
                             <Link
                               href={item.linkUrl}
-                              className="inline-flex items-center gap-1.5 font-bold text-cyan-600 dark:text-cyan-400 hover:underline"
+                              className="inline-flex items-center gap-1.5 font-bold text-blue-600 dark:text-blue-400 hover:underline"
                             >
                               <span>{item.linkText}</span>
                               <ArrowRight className="w-3.5 h-3.5" />

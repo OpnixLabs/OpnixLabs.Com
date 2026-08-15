@@ -144,7 +144,7 @@ export default async function TechnologyPage({ params }: PageProps) {
   };
 
   return (
-    <article className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors selection:bg-cyan-500 selection:text-slate-950">
+    <article className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors selection:bg-blue-500 selection:text-slate-950">
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
@@ -170,7 +170,7 @@ export default async function TechnologyPage({ params }: PageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 text-xs font-extrabold uppercase tracking-wider border border-cyan-500/30">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-extrabold uppercase tracking-wider border border-blue-500/30">
                 <Sparkles className="w-3.5 h-3.5" /> HIRE SENIOR DEVELOPERS
               </span>
 
@@ -192,7 +192,7 @@ export default async function TechnologyPage({ params }: PageProps) {
               <div className="space-y-3 pt-2">
                 {tech.keyBenefits.slice(0, 3).map((benefit, i) => (
                   <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                     <span>{benefit}</span>
                   </div>
                 ))}
@@ -218,7 +218,7 @@ export default async function TechnologyPage({ params }: PageProps) {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {tech.statBoxes.map((stat, idx) => (
               <div key={idx} className="space-y-1">
-                <div className="text-2xl sm:text-4xl font-extrabold text-cyan-600 dark:text-cyan-400 font-mono">
+                <div className="text-2xl sm:text-4xl font-extrabold text-blue-600 dark:text-blue-400 font-mono">
                   {stat.value}
                 </div>
                 <div className="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
@@ -244,14 +244,14 @@ export default async function TechnologyPage({ params }: PageProps) {
 
           {/* Testimonial Quote Banner */}
           <div className="glass-panel p-8 sm:p-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6">
-            <div className="p-4 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 shrink-0">
+            <div className="p-4 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 shrink-0">
               <Quote className="w-8 h-8" />
             </div>
             <div className="space-y-2">
               <p className="text-sm sm:text-base italic text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
                 &ldquo;{tech.testimonialQuote.quote}&rdquo;
               </p>
-              <div className="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
+              <div className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
                 — {tech.testimonialQuote.author}, <span className="text-slate-500">{tech.testimonialQuote.role}</span>
               </div>
             </div>
@@ -263,7 +263,7 @@ export default async function TechnologyPage({ params }: PageProps) {
       <section className="py-10 sm:py-16 bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400">
               EXPERT CAPABILITIES
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
@@ -275,9 +275,9 @@ export default async function TechnologyPage({ params }: PageProps) {
             {tech.capabilities.map((cap, i) => (
               <div
                 key={i}
-                className="glass-panel p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950/80 space-y-3 shadow-md hover:border-cyan-500/40 transition-all"
+                className="glass-panel p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950/80 space-y-3 shadow-md hover:border-blue-500/40 transition-all"
               >
-                <div className="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold">
                   <Code2 className="w-5 h-5" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white">{cap.title}</h3>
@@ -314,7 +314,7 @@ export default async function TechnologyPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="glass-panel p-8 sm:p-12 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-2xl">
-              <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
+              <span className="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">
                 PROVEN ENTERPRISE TRACK RECORD
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
@@ -327,7 +327,7 @@ export default async function TechnologyPage({ params }: PageProps) {
 
             <Link
               href={`/case-studies/${tech.featuredCaseStudySlug || 'blackboard'}`}
-              className="px-6 py-3.5 rounded-lg bg-slate-900 dark:bg-cyan-500 hover:bg-cyan-600 dark:hover:bg-cyan-400 text-white dark:text-slate-950 font-bold text-xs sm:text-sm shadow-md shrink-0 flex items-center gap-2 transition-all"
+              className="px-6 py-3.5 rounded-lg bg-slate-900 dark:bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-400 text-white dark:text-slate-950 font-bold text-xs sm:text-sm shadow-md shrink-0 flex items-center gap-2 transition-all"
             >
               Read Detailed Case Study <ArrowRight className="w-4 h-4" />
             </Link>
@@ -339,7 +339,7 @@ export default async function TechnologyPage({ params }: PageProps) {
       <section className="py-16 sm:py-24 bg-slate-50 dark:bg-slate-950">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="text-center space-y-3">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400">
               GOT QUESTIONS?
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
@@ -354,7 +354,7 @@ export default async function TechnologyPage({ params }: PageProps) {
                 className="glass-panel p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-2 shadow-sm"
               >
                 <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <HelpCircle className="w-5 h-5 text-cyan-500 shrink-0" />
+                  <HelpCircle className="w-5 h-5 text-blue-500 shrink-0" />
                   {faq.question}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed pl-7">
@@ -378,7 +378,7 @@ export default async function TechnologyPage({ params }: PageProps) {
           <div>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold text-sm sm:text-base transition-all shadow-lg hover:shadow-cyan-500/25 antialiased"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-sm sm:text-base transition-all shadow-lg hover:shadow-blue-500/25 antialiased"
             >
               <span>Schedule a Call</span>
               <ArrowRight className="w-5 h-5" />

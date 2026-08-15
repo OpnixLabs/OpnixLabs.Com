@@ -4,6 +4,8 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppWidget from '@/components/WhatsAppWidget';
+import CookieConsentToast from '@/components/CookieConsentToast';
+import UserJourneyTracker from '@/components/UserJourneyTracker';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/next"
 
@@ -161,11 +163,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-gray-100 antialiased selection:bg-cyan-500 selection:text-slate-950 transition-colors">
+      <body className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-gray-100 antialiased selection:bg-blue-600 selection:text-white transition-colors">
+        <UserJourneyTracker />
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
         <WhatsAppWidget />
+        <CookieConsentToast />
         <SpeedInsights />
         <Analytics />
       </body>

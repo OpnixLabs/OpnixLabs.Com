@@ -73,14 +73,14 @@ export default function AboutTestimonials() {
   return (
     <section className="py-16 md:py-28 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl -translate-y-1/2 -z-10 pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 -z-10 pointer-events-none" />
       <div className="absolute top-1/2 right-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider border border-cyan-500/20">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-500/20">
             <UserCheck className="w-3.5 h-3.5" /> Client Feedback
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -103,14 +103,14 @@ export default function AboutTestimonials() {
               className="glass-panel bg-white dark:bg-slate-900/80 p-8 sm:p-12 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl relative"
             >
               {/* Quote Icon */}
-              <div className="w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-600 dark:text-cyan-400 mb-6">
+              <div className="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6">
                 <Quote className="w-7 h-7" />
               </div>
 
               {/* Rating Stars */}
               <div className="flex gap-1 mb-6">
                 {[...Array(current.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400 dark:fill-cyan-400 dark:text-cyan-400" />
+                  <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400 dark:fill-blue-400 dark:text-blue-400" />
                 ))}
               </div>
 
@@ -130,7 +130,7 @@ export default function AboutTestimonials() {
                   </p>
                 </div>
 
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs font-semibold text-cyan-700 dark:text-cyan-400 self-start sm:self-auto">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs font-semibold text-blue-700 dark:text-blue-400 self-start sm:self-auto">
                   <Building className="w-3.5 h-3.5" />
                   <span>{current.tag}</span>
                 </div>
@@ -148,8 +148,8 @@ export default function AboutTestimonials() {
                   onClick={() => setCurrentIndex(idx)}
                   className={`h-2.5 rounded-full transition-all duration-300 ${
                     idx === currentIndex 
-                      ? 'w-8 bg-cyan-500 dark:bg-cyan-400' 
-                      : 'w-2.5 bg-slate-300 dark:bg-slate-700 hover:bg-cyan-500/50'
+                      ? 'w-8 bg-blue-500 dark:bg-blue-400' 
+                      : 'w-2.5 bg-slate-300 dark:bg-slate-700 hover:bg-blue-500/50'
                   }`}
                   aria-label={`Go to testimonial ${idx + 1}`}
                 />
@@ -160,14 +160,14 @@ export default function AboutTestimonials() {
             <div className="flex items-center gap-3">
               <button
                 onClick={prevTestimonial}
-                className="p-3 rounded-full glass-panel bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors shadow-md"
+                className="p-3 rounded-full glass-panel bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors shadow-md"
                 aria-label="Previous Testimonial"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={nextTestimonial}
-                className="p-3 rounded-full glass-panel bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors shadow-md"
+                className="p-3 rounded-full glass-panel bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors shadow-md"
                 aria-label="Next Testimonial"
               >
                 <ChevronRight className="w-5 h-5" />

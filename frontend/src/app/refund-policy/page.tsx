@@ -18,7 +18,7 @@ export default function RefundPolicyPage() {
       <nav aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
           <li>
-            <Link href="/" className="inline-flex items-center gap-1 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+            <Link href="/" className="inline-flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               <Home className="w-3.5 h-3.5" />
               <span>Home</span>
             </Link>
@@ -32,7 +32,7 @@ export default function RefundPolicyPage() {
 
       {/* Header */}
       <div className="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider border border-cyan-500/20">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-500/20">
           <RefreshCw className="w-3.5 h-3.5" /> Financial Transparency
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -47,9 +47,9 @@ export default function RefundPolicyPage() {
       <div className="space-y-10 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
         
         {/* Intro Banner */}
-        <div className="glass-panel p-6 sm:p-8 rounded-xl border border-cyan-500/30 space-y-3 bg-cyan-500/5">
+        <div className="glass-panel p-6 sm:p-8 rounded-xl border border-blue-500/30 space-y-3 bg-blue-500/5">
           <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <CheckCircle2 className="w-5 h-5 text-cyan-500" />
+            <CheckCircle2 className="w-5 h-5 text-blue-500" />
             Milestone-Based Accountability & Quality Guarantee
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -94,7 +94,7 @@ export default function RefundPolicyPage() {
             OpnixLabs guarantees engineering benchmarks including 99.99% uptime for managed cloud infrastructure and sub-100ms API response targets:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
-            <li>If OpnixLabs fails to meet contractually agreed-upon SLA performance standards due to code defect or system architecture failure within our control, Client is eligible for SLA service credits or partial billing remediation as outlined in the <Link href="/security-sla" className="text-cyan-600 dark:text-cyan-400 underline font-semibold">Security SLA</Link>.</li>
+            <li>If OpnixLabs fails to meet contractually agreed-upon SLA performance standards due to code defect or system architecture failure within our control, Client is eligible for SLA service credits or partial billing remediation as outlined in the <Link href="/security-sla" className="text-blue-600 dark:text-blue-400 underline font-semibold">Security SLA</Link>.</li>
             <li>Defects identified during the standard 30-day post-launch warranty period will be rectified at zero additional cost to Client.</li>
           </ul>
         </section>
@@ -108,19 +108,19 @@ export default function RefundPolicyPage() {
             To initiate a refund request or dispute a milestone invoice:
           </p>
           <ol className="list-decimal pl-6 space-y-2 text-slate-600 dark:text-slate-300">
-            <li>Submit a written request to <a href="mailto:contact@opnixlabs.com" className="text-cyan-600 dark:text-cyan-400 underline font-semibold">contact@opnixlabs.com</a> detailing the SOW number, milestone description, and rationale.</li>
+            <li>Submit a written request to <a href="mailto:contact@opnixlabs.com" className="text-blue-600 dark:text-blue-400 underline font-semibold">contact@opnixlabs.com</a> detailing the SOW number, milestone description, and rationale.</li>
             <li>Our engineering and finance management will review the request within 3 business days and arrange a resolution call.</li>
             <li>Approved refunds will be issued to the original payment method within 10 to 14 business days.</li>
           </ol>
         </section>
 
         {/* Contact Banner */}
-        <div className="p-8 rounded-xl border border-cyan-500/40 text-center space-y-4 bg-slate-900 text-white shadow-2xl">
+        <div className="p-8 rounded-xl border border-blue-500/40 text-center space-y-4 bg-slate-900 text-white shadow-2xl">
           <h3 className="text-xl font-bold text-white">Need Help with Billing or Cancellation?</h3>
           <p className="text-xs sm:text-sm text-slate-300">
             Contact our dedicated billing support team for prompt assistance:
           </p>
-          <div className="flex flex-wrap justify-center gap-6 text-xs text-cyan-400 font-semibold pt-2">
+          <div className="flex flex-wrap justify-center gap-6 text-xs text-blue-400 font-semibold pt-2">
             <a href="mailto:contact@opnixlabs.com" className="flex items-center gap-2 hover:underline">
               <Mail className="w-4 h-4" /> contact@opnixlabs.com
             </a>

@@ -31,7 +31,7 @@ export default async function WorkPortfolioPage() {
     <div className="py-12 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
       {/* Work Hero Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider border border-cyan-500/30">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-500/30">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Client Portfolio & Case Studies</span>
         </span>
@@ -48,7 +48,7 @@ export default async function WorkPortfolioPage() {
         {caseStudies.map((work) => (
           <div
             key={work.slug}
-            className="glass-panel rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg"
+            className="glass-panel rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg"
           >
             <div>
               {/* Cover Image & Category Pill */}
@@ -59,7 +59,7 @@ export default async function WorkPortfolioPage() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/80 text-cyan-400 text-[11px] font-bold border border-cyan-500/30 backdrop-blur-sm">
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/80 text-blue-400 text-[11px] font-bold border border-blue-500/30 backdrop-blur-sm">
                   {work.category}
                 </div>
               </div>
@@ -67,11 +67,11 @@ export default async function WorkPortfolioPage() {
               {/* Work Details */}
               <div className="p-6 space-y-4">
                 <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {work.clientName}
                   </h3>
                   <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-950 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800 shrink-0">
-                    <Clock className="w-3 h-3 text-cyan-500" />
+                    <Clock className="w-3 h-3 text-blue-500" />
                     {work.engagementLengthValue} {work.engagementLengthUnit}
                   </span>
                 </div>
@@ -103,7 +103,7 @@ export default async function WorkPortfolioPage() {
             <div className="px-6 pb-6 pt-2">
               <Link
                 href={`/case-studies/${work.slug}`}
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-slate-900 dark:bg-cyan-500 hover:bg-cyan-600 dark:hover:bg-cyan-400 text-white dark:text-slate-950 font-bold text-xs sm:text-sm shadow-md hover:shadow-cyan-500/20 transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-slate-900 dark:bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-400 text-white dark:text-slate-950 font-bold text-xs sm:text-sm shadow-md hover:shadow-blue-500/20 transition-all"
               >
                 <span>Check Case Study</span>
                 <ArrowRight className="w-4 h-4" />
@@ -124,7 +124,7 @@ export default async function WorkPortfolioPage() {
         <div className="pt-2">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs sm:text-sm shadow-md transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm shadow-md transition-all"
           >
             Get Free Consultation <ArrowRight className="w-4 h-4" />
           </Link>

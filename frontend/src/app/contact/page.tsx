@@ -56,14 +56,14 @@ export default function ContactPage() {
 
           <div className="space-y-4">
             <div className="flex items-center gap-3.5">
-              <div className="w-9 h-9 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 flex-shrink-0">
+              <div className="w-9 h-9 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 flex-shrink-0">
                 <Mail className="w-4 h-4" />
               </div>
               <div>
                 <p className="text-[11px] uppercase text-slate-500 dark:text-slate-400 font-semibold">Email Us</p>
                 <a
                   href="mailto:contact@opnixlabs.com"
-                  className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-block"
+                  className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors inline-block"
                 >
                   contact@opnixlabs.com
                 </a>
@@ -71,14 +71,14 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-center gap-3.5">
-              <div className="w-9 h-9 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 flex-shrink-0">
+              <div className="w-9 h-9 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 flex-shrink-0">
                 <Phone className="w-4 h-4" />
               </div>
               <div>
                 <p className="text-[11px] uppercase text-slate-500 dark:text-slate-400 font-semibold">Call Engineering</p>
                 <a
                   href="tel:+918882659469"
-                  className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-block"
+                  className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors inline-block"
                 >
                   +91 88826-59469
                 </a>
@@ -86,7 +86,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-center gap-3.5">
-              <div className="w-9 h-9 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 flex-shrink-0">
+              <div className="w-9 h-9 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 flex-shrink-0">
                 <Clock className="w-4 h-4" />
               </div>
               <div>
@@ -96,7 +96,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-center gap-3.5">
-              <div className="w-9 h-9 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 flex-shrink-0">
+              <div className="w-9 h-9 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 flex-shrink-0">
                 <MapPin className="w-4 h-4" />
               </div>
               <div>
@@ -105,7 +105,7 @@ export default function ContactPage() {
                   href="https://maps.google.com/?q=Uttar+Pradesh,+India"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-block"
+                  className="text-slate-900 dark:text-white font-medium text-xs sm:text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors inline-block"
                 >
                   Uttar Pradesh, India
                 </a>
@@ -118,35 +118,35 @@ export default function ContactPage() {
         <div className="glass-panel p-6 sm:p-8 rounded-md border border-slate-200 dark:border-slate-800 relative overflow-hidden transition-all duration-500">
           {loading && (
             <div className="absolute top-0 left-0 right-0 h-1 bg-slate-800 overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-400 animate-pulse w-full" />
+              <div className="h-full bg-gradient-to-r from-blue-500 via-blue-500 to-blue-400 animate-pulse w-full" />
             </div>
           )}
 
           {submitted ? (
             <div className="h-full min-h-[340px] flex flex-col items-center justify-center text-center space-y-6 py-8 animate-in fade-in zoom-in-95 duration-500">
               <div className="relative">
-                <div className="w-16 h-16 rounded-full bg-cyan-500/10 border-2 border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-xl shadow-cyan-500/20">
-                  <CheckCircle2 className="w-8 h-8 text-cyan-400 animate-bounce" />
+                <div className="w-16 h-16 rounded-full bg-blue-500/10 border-2 border-blue-500/40 flex items-center justify-center text-blue-400 shadow-xl shadow-blue-500/20">
+                  <CheckCircle2 className="w-8 h-8 text-blue-400 animate-bounce" />
                 </div>
-                <div className="absolute inset-0 rounded-full border border-cyan-400/30 animate-ping opacity-75" />
+                <div className="absolute inset-0 rounded-full border border-blue-400/30 animate-ping opacity-75" />
               </div>
 
               <div className="space-y-2 max-w-sm">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
                   <Sparkles className="w-3.5 h-3.5" /> Inquiry Received
                 </div>
                 <h3 className="text-2xl font-black text-slate-900 dark:text-white">Message Transmitted!</h3>
                 <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
-                  Thank you, <span className="font-semibold text-cyan-600 dark:text-cyan-400">{name || 'Client'}</span>! Your project inquiry has been sent directly to our lead technical team. We will reach out within 24 hours.
+                  Thank you, <span className="font-semibold text-blue-600 dark:text-blue-400">{name || 'Client'}</span>! Your project inquiry has been sent directly to our lead technical team. We will reach out within 24 hours.
                 </p>
               </div>
 
               <button
                 type="button"
                 onClick={handleReset}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 text-slate-800 dark:text-white font-semibold text-xs transition-all hover:bg-slate-200 dark:hover:bg-slate-800"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 text-slate-800 dark:text-white font-semibold text-xs transition-all hover:bg-slate-200 dark:hover:bg-slate-800"
               >
-                <RotateCcw className="w-3.5 h-3.5 text-cyan-400" />
+                <RotateCcw className="w-3.5 h-3.5 text-blue-400" />
                 Send Another Message
               </button>
             </div>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="John Doe"
-                  className="w-full px-3.5 py-2.5 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500 text-xs transition-colors"
+                  className="w-full px-3.5 py-2.5 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-blue-500 text-xs transition-colors"
                 />
               </div>
 
@@ -172,7 +172,7 @@ export default function ContactPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="john@company.com"
-                  className="w-full px-3.5 py-2.5 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500 text-xs transition-colors"
+                  className="w-full px-3.5 py-2.5 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-blue-500 text-xs transition-colors"
                 />
               </div>
 
@@ -184,7 +184,7 @@ export default function ContactPage() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Tell us about your technical project requirements..."
-                  className="w-full px-3.5 py-2.5 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500 text-xs resize-none transition-colors"
+                  className="w-full px-3.5 py-2.5 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-blue-500 text-xs resize-none transition-colors"
                 />
               </div>
 
@@ -205,7 +205,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 rounded-md bg-cyan-500 hover:bg-cyan-400 disabled:bg-cyan-500/60 text-slate-950 font-bold text-xs shadow-lg hover:shadow-cyan-500/25 transition-all flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-md bg-blue-600 hover:bg-blue-500 disabled:bg-blue-500/60 text-white font-bold text-xs shadow-lg hover:shadow-blue-500/25 transition-all flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>
@@ -222,7 +222,7 @@ export default function ContactPage() {
 
               {/* Cloudflare Turnstile Protection Badge */}
               <div className="pt-2 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800/80">
-                <div className="flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 font-medium">
+                <div className="flex items-center gap-1.5 text-blue-600 dark:text-blue-400 font-medium">
                   <ShieldCheck className="w-4 h-4" />
                   <span>Protected by Cloudflare Turnstile</span>
                 </div>

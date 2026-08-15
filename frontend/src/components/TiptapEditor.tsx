@@ -73,7 +73,7 @@ export default function TiptapEditor({ content, onChange }: TiptapEditorProps) {
           type="button"
           onClick={() => editor.chain().focus().toggleBold().run()}
           className={`p-1.5 rounded-md transition-colors ${
-            editor.isActive('bold') ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+            editor.isActive('bold') ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
           }`}
           title="Bold"
         >
@@ -84,7 +84,7 @@ export default function TiptapEditor({ content, onChange }: TiptapEditorProps) {
           type="button"
           onClick={() => editor.chain().focus().toggleItalic().run()}
           className={`p-1.5 rounded-md transition-colors ${
-            editor.isActive('italic') ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+            editor.isActive('italic') ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
           }`}
           title="Italic"
         >
@@ -97,7 +97,7 @@ export default function TiptapEditor({ content, onChange }: TiptapEditorProps) {
           type="button"
           onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
           className={`p-1.5 rounded-md transition-colors ${
-            editor.isActive('heading', { level: 1 }) ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+            editor.isActive('heading', { level: 1 }) ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
           }`}
           title="Heading 1"
         >
@@ -108,7 +108,7 @@ export default function TiptapEditor({ content, onChange }: TiptapEditorProps) {
           type="button"
           onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
           className={`p-1.5 rounded-md transition-colors ${
-            editor.isActive('heading', { level: 2 }) ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+            editor.isActive('heading', { level: 2 }) ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
           }`}
           title="Heading 2"
         >
@@ -121,7 +121,7 @@ export default function TiptapEditor({ content, onChange }: TiptapEditorProps) {
           type="button"
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           className={`p-1.5 rounded-md transition-colors ${
-            editor.isActive('bulletList') ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+            editor.isActive('bulletList') ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
           }`}
           title="Bullet List"
         >
@@ -132,7 +132,7 @@ export default function TiptapEditor({ content, onChange }: TiptapEditorProps) {
           type="button"
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
           className={`p-1.5 rounded-md transition-colors ${
-            editor.isActive('orderedList') ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+            editor.isActive('orderedList') ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
           }`}
           title="Numbered List"
         >
@@ -143,7 +143,7 @@ export default function TiptapEditor({ content, onChange }: TiptapEditorProps) {
           type="button"
           onClick={() => editor.chain().focus().toggleCodeBlock().run()}
           className={`p-1.5 rounded-md transition-colors ${
-            editor.isActive('codeBlock') ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+            editor.isActive('codeBlock') ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
           }`}
           title="Code Block"
         >
@@ -154,7 +154,7 @@ export default function TiptapEditor({ content, onChange }: TiptapEditorProps) {
           type="button"
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
           className={`p-1.5 rounded-md transition-colors ${
-            editor.isActive('blockquote') ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+            editor.isActive('blockquote') ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
           }`}
           title="Quote"
         >
@@ -165,7 +165,7 @@ export default function TiptapEditor({ content, onChange }: TiptapEditorProps) {
           type="button"
           onClick={addLink}
           className={`p-1.5 rounded-md transition-colors ${
-            editor.isActive('link') ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+            editor.isActive('link') ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
           }`}
           title="Insert Link"
         >

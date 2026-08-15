@@ -20,7 +20,7 @@ const standards: EngineeringStandard[] = [
     metric: '99.99%',
     pillar: 'Stateless Architecture',
     description: 'Multi-region AWS/GCP Kubernetes deployment with automated failover routing and zero single points of failure.',
-    icon: <ShieldCheck className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
+    icon: <ShieldCheck className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
   },
   {
     title: 'Sub-100ms API Latency Target',
@@ -55,7 +55,7 @@ export default function AboutAwards() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider border border-cyan-500/20">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-500/20">
             <Sparkles className="w-3.5 h-3.5" /> Engineering Commitments
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -76,7 +76,7 @@ export default function AboutAwards() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -6, scale: 1.02 }}
-              className="glass-panel bg-white dark:bg-slate-900/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all shadow-xl space-y-4 flex flex-col justify-between group relative overflow-hidden"
+              className="glass-panel bg-white dark:bg-slate-900/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500/40 transition-all shadow-xl space-y-4 flex flex-col justify-between group relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                 {item.icon}
@@ -87,16 +87,16 @@ export default function AboutAwards() {
                   <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center shadow-md">
                     {item.icon}
                   </div>
-                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-cyan-700 dark:text-cyan-400 text-[11px] font-extrabold border border-slate-200 dark:border-slate-700">
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-blue-700 dark:text-blue-400 text-[11px] font-extrabold border border-slate-200 dark:border-slate-700">
                     {item.metric}
                   </span>
                 </div>
 
-                <p className="text-[11px] font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
+                <p className="text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
                   {item.pillar}
                 </p>
 
-                <h3 className="text-lg font-extrabold text-slate-900 dark:text-white leading-snug group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-lg font-extrabold text-slate-900 dark:text-white leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {item.title}
                 </h3>
 

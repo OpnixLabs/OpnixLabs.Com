@@ -21,32 +21,32 @@ import {
 export default function HomePage() {
   const services = [
     {
-      icon: <Globe className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
+      icon: <Globe className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
       title: 'Custom Web & Software Development',
       desc: 'High-converting web applications, SaaS platforms, and enterprise software built for performance, security, and scalability.',
     },
     {
-      icon: <Database className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
+      icon: <Database className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
       title: 'Cloud Architecture & DevOps',
       desc: 'Resilient cloud infrastructure, multi-region deployments, database optimization, and 24/7 automated monitoring.',
     },
     {
-      icon: <Layers className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
+      icon: <Layers className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
       title: 'IT Strategy & Technical Consulting',
       desc: 'Expert guidance on enterprise technology roadmaps, system modernizations, software audits, and architecture design.',
     },
     {
-      icon: <Lock className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
+      icon: <Lock className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
       title: 'Cybersecurity & Compliance',
       desc: 'Comprehensive security assessments, data protection, identity management, and compliance auditing for enterprise systems.',
     },
     {
-      icon: <Zap className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
+      icon: <Zap className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
       title: 'Digital Transformation',
       desc: 'Modernizing legacy software into agile cloud-native platforms to accelerate operational efficiency and speed to market.',
     },
     {
-      icon: <ShieldCheck className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />,
+      icon: <ShieldCheck className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
       title: 'API Engineering & Integrations',
       desc: 'Seamless integration of third-party platforms, custom RESTful and GraphQL APIs, and automated enterprise workflows.',
     },
@@ -112,11 +112,11 @@ export default function HomePage() {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all transform hover:-translate-y-0.5"
               >
                 <span>Let&apos;s Build Together</span>
-                <div className="w-5 h-5 rounded-full bg-slate-950/20 flex items-center justify-center">
-                  <ArrowRight className="w-3.5 h-3.5 text-slate-950" />
+                <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+                  <ArrowRight className="w-3.5 h-3.5 text-white" />
                 </div>
               </Link>
             </div>
@@ -127,29 +127,29 @@ export default function HomePage() {
                 Our Expertise
               </span>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
-                  <div className="p-2 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform">
+                <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-blue-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
+                  <div className="p-2 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
                     <Monitor className="w-4 h-4" />
                   </div>
                   <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">Web Development</span>
                 </div>
 
-                <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
-                  <div className="p-2 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform">
+                <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-blue-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
+                  <div className="p-2 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
                     <Layers className="w-4 h-4" />
                   </div>
                   <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">SaaS Development</span>
                 </div>
 
-                <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
-                  <div className="p-2 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform">
+                <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-blue-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
+                  <div className="p-2 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
                     <Layout className="w-4 h-4" />
                   </div>
                   <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">UI/UX Design</span>
                 </div>
 
-                <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
-                  <div className="p-2 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform">
+                <div className="p-3.5 rounded-md glass-panel border border-slate-200 dark:border-slate-800 hover:border-blue-500/40 transition-colors flex flex-col items-center text-center space-y-2 group">
+                  <div className="p-2 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">Performance & Security</span>
@@ -195,7 +195,7 @@ export default function HomePage() {
       {/* CORE SERVICES GRID */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
             Our Enterprise Capabilities
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
@@ -210,13 +210,13 @@ export default function HomePage() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="p-7 rounded-xl glass-panel border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all duration-300 space-y-4 group flex flex-col justify-between"
+              className="p-7 rounded-xl glass-panel border border-slate-200 dark:border-slate-800 hover:border-blue-500/40 transition-all duration-300 space-y-4 group flex flex-col justify-between"
             >
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:scale-110 transition-transform">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
@@ -229,10 +229,10 @@ export default function HomePage() {
       </section>
 
       {/* STATS SECTION */}
-      <section className="bg-slate-900 border-y border-cyan-500/30 py-16 text-white shadow-2xl relative overflow-hidden">
+      <section className="bg-slate-900 border-y border-blue-500/30 py-16 text-white shadow-2xl relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase tracking-wider border border-cyan-500/30">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold uppercase tracking-wider border border-blue-500/30">
               Proven Performance
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
@@ -249,7 +249,7 @@ export default function HomePage() {
                 key={index}
                 className="p-6 rounded-xl bg-slate-950/60 border border-slate-800 text-center space-y-2"
               >
-                <div className="text-3xl sm:text-5xl font-black text-cyan-400">
+                <div className="text-3xl sm:text-5xl font-black text-blue-400">
                   {stat.number}
                 </div>
                 <div className="text-xs sm:text-sm font-semibold text-slate-300">
@@ -264,7 +264,7 @@ export default function HomePage() {
       {/* FEATURED CASE STUDIES */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
             Case Studies
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
@@ -279,7 +279,7 @@ export default function HomePage() {
           {caseStudies.map((cs, index) => (
             <div
               key={index}
-              className="rounded-xl glass-panel overflow-hidden border border-slate-200 dark:border-slate-800 group hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+              className="rounded-xl glass-panel overflow-hidden border border-slate-200 dark:border-slate-800 group hover:border-blue-500/40 transition-all flex flex-col justify-between"
             >
               <div className="relative h-64 sm:h-72 w-full overflow-hidden">
                 <Image
@@ -291,14 +291,14 @@ export default function HomePage() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-full bg-slate-900/90 text-cyan-400 text-xs font-bold uppercase border border-slate-700">
+                  <span className="px-3 py-1 rounded-full bg-slate-900/90 text-blue-400 text-xs font-bold uppercase border border-slate-700">
                     {cs.category}
                   </span>
                 </div>
               </div>
 
               <div className="p-6 sm:p-8 space-y-4">
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {cs.title}
                 </h3>
                 <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
@@ -307,7 +307,7 @@ export default function HomePage() {
                 <div className="pt-2">
                   <Link
                     href="/case-studies"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline"
                   >
                     <span>Read Full Case Study</span>
                     <ChevronRight className="w-3.5 h-3.5" />
@@ -322,7 +322,7 @@ export default function HomePage() {
       {/* TESTIMONIALS SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
             Client Testimonials
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
@@ -345,7 +345,7 @@ export default function HomePage() {
                   alt={t.author}
                   width={44}
                   height={44}
-                  className="rounded-full object-cover border border-cyan-500/40"
+                  className="rounded-full object-cover border border-blue-500/40"
                 />
                 <div>
                   <h3 className="text-sm font-bold text-slate-900 dark:text-white">
@@ -363,7 +363,7 @@ export default function HomePage() {
 
       {/* FINAL CTA SECTION */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-2xl bg-slate-900 text-white border border-cyan-500/40 text-center space-y-6 shadow-2xl">
+        <div className="p-8 sm:p-12 rounded-2xl bg-slate-900 text-white border border-blue-500/40 text-center space-y-6 shadow-2xl">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
             Ready to Scale Your Enterprise Software?
           </h2>
@@ -373,10 +373,10 @@ export default function HomePage() {
           <div className="pt-2">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-sm shadow-xl shadow-cyan-400/25 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-xl shadow-blue-500/25 transition-all"
             >
               <span>Schedule Free Consultation</span>
-              <ArrowRight className="w-4 h-4 text-slate-950" />
+              <ArrowRight className="w-4 h-4 text-white" />
             </Link>
           </div>
         </div>

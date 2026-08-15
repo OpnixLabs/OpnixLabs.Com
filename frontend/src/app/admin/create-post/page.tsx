@@ -83,7 +83,7 @@ export default function CreatePostPage() {
               <ArrowLeft className="w-3.5 h-3.5" /> Back to Blog
             </Link>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-2.5">
-              <PenSquare className="w-6 h-6 text-cyan-400" /> Admin Article Publisher
+              <PenSquare className="w-6 h-6 text-blue-400" /> Admin Article Publisher
             </h1>
           </div>
 
@@ -91,9 +91,9 @@ export default function CreatePostPage() {
             type="button"
             onClick={handleManualCronTrigger}
             disabled={isTriggeringCron}
-            className="px-3.5 py-2 rounded-md bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 font-semibold text-xs flex items-center gap-2 transition-colors"
+            className="px-3.5 py-2 rounded-md bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-blue-400 font-semibold text-xs flex items-center gap-2 transition-colors"
           >
-            <Bot className="w-4 h-4 text-cyan-400" />
+            <Bot className="w-4 h-4 text-blue-400" />
             {isTriggeringCron ? 'Triggering...' : 'Trigger Gemini AI Auto-Post'}
           </button>
         </div>
@@ -122,7 +122,7 @@ export default function CreatePostPage() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g. Next-Gen Microservices in Go & Gemini Integration"
-              className="w-full px-3.5 py-2.5 rounded-md bg-slate-900 border border-slate-800 text-white text-sm focus:outline-none focus:border-cyan-500 font-semibold"
+              className="w-full px-3.5 py-2.5 rounded-md bg-slate-900 border border-slate-800 text-white text-sm focus:outline-none focus:border-blue-500 font-semibold"
               required
             />
             <p className="text-[11px] text-slate-500">
@@ -141,7 +141,7 @@ export default function CreatePostPage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-6 py-2.5 rounded-md bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs flex items-center gap-2 disabled:opacity-50 transition-colors"
+              className="px-6 py-2.5 rounded-md bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 disabled:opacity-50 transition-colors"
             >
               {isSubmitting ? 'Publishing...' : 'Publish Article'}
               <Send className="w-3.5 h-3.5" />
